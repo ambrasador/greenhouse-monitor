@@ -1,0 +1,10 @@
+
+> greenhouse-monitor@1.0.0 test:e2e
+> node --experimental-vm-modules node_modules/jest/bin/jest.js --selectProjects e2e
+
+Running one project: e2e
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        6.446 s, estimated 7 s
+Ran all test suites.

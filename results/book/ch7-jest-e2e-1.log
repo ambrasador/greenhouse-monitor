@@ -1,0 +1,7 @@
+Running one project: e2e
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        6.78 s, estimated 7 s
+Ran all test suites.
+Test results written to: ../calc7/jest-e2e-1.json

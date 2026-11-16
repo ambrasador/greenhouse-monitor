@@ -1,0 +1,16 @@
+{
+ "mode": "on",
+ "frames": 20000,
+ "noClients": {
+  "bytesPerFrame": 1460,
+  "usPerFrame": 18.73,
+  "wallMs": 296,
+  "packetsKept": 22000
+ },
+ "oneClient": {
+  "bytesPerFrame": 1508,
+  "usPerFrame": 43.47,
+  "wallMs": 647,
+  "packetsKept": 42000
+ }
+}

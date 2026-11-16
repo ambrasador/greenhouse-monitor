@@ -1,0 +1,110 @@
+--progress is a global compose flag, better use `docker compose --progress xx build ...
+ Image greenhouse-backend:1.0 Building 
+ Image greenhouse-web:1.0 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.21kB done
+#1 DONE 0.0s
+
+#2 [backend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.77kB done
+#2 DONE 0.0s
+
+#3 [web internal] load metadata for docker.io/library/node:22.23.4-bookworm-slim
+#3 DONE 0.0s
+
+#4 [web internal] load metadata for docker.io/library/nginx:1.30.6-alpine
+#4 DONE 0.0s
+
+#5 [web internal] load .dockerignore
+#5 transferring context: 1.08kB done
+#5 DONE 0.0s
+
+#6 [backend client 1/6] FROM docker.io/library/node:22.23.4-bookworm-slim@sha256:3d41ab46456030df28bdad9b69290046e1eab2a5a89a31182c54a5d9aa344b52
+#6 resolve docker.io/library/node:22.23.4-bookworm-slim@sha256:3d41ab46456030df28bdad9b69290046e1eab2a5a89a31182c54a5d9aa344b52 0.0s done
+#6 DONE 0.0s
+
+#7 [web web 1/3] FROM docker.io/library/nginx:1.30.6-alpine@sha256:e9b2d7624fd7957f4ed44ae0a272d93fb73aeb8512ba8916f8118ae6143fd115
+#7 resolve docker.io/library/nginx:1.30.6-alpine@sha256:e9b2d7624fd7957f4ed44ae0a272d93fb73aeb8512ba8916f8118ae6143fd115 0.0s done
+#7 DONE 0.0s
+
+#8 [web internal] load build context
+#8 transferring context: 1.59kB 0.0s done
+#8 DONE 0.0s
+
+#9 [web client 6/6] RUN npm run build:client
+#9 CACHED
+
+#10 [web web 2/3] COPY nginx.conf /etc/nginx/conf.d/default.conf
+#10 CACHED
+
+#11 [web client 2/6] WORKDIR /app
+#11 CACHED
+
+#12 [web client 3/6] COPY package.json package-lock.json ./
+#12 CACHED
+
+#13 [web client 4/6] RUN npm ci --ignore-scripts
+#13 CACHED
+
+#14 [web client 5/6] COPY client ./client
+#14 CACHED
+
+#15 [web web 3/3] COPY --from=client /app/client/dist /usr/share/nginx/html
+#15 CACHED
+
+#16 [web] exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:760e40af5e23d7a86dd421457f3b38194b519756ef0fd7bbc309e7f185693efb done
+#16 exporting config sha256:160af7ce7b6eb2fa1bd5c2f96893cb9d32e42fa4a4ce6c7f66714129324a1383 done
+#16 exporting attestation manifest sha256:ad0f4cf9460f4fc995857c6f47c3855711e3ed1b2c2854cbaafd60456a78d3be done
+#16 exporting manifest list sha256:cf52385d6981a19330c0310797bb5043c4420b3149f1142070ea6d3d07da2636 done
+#16 naming to docker.io/library/greenhouse-web:1.0 done
+#16 unpacking to docker.io/library/greenhouse-web:1.0 done
+#16 DONE 0.1s
+
+#17 [backend internal] load build context
+#17 ...
+
+#18 [web] resolving provenance for metadata file
+#18 DONE 0.0s
+
+#17 [backend internal] load build context
+#17 transferring context: 14.39kB 0.3s done
+#17 DONE 0.3s
+
+#11 [backend client 2/6] WORKDIR /app
+#11 CACHED
+
+#19 [backend deps 4/4] RUN npm ci --omit=dev --ignore-scripts
+#19 CACHED
+
+#20 [backend app 3/6] RUN mkdir /data && chown node:node /data
+#20 CACHED
+
+#21 [backend deps 3/4] COPY package.json package-lock.json ./
+#21 CACHED
+
+#22 [backend app 4/6] COPY --from=deps /app/node_modules ./node_modules
+#22 CACHED
+
+#23 [backend app 5/6] COPY *.js *.sql package.json ./
+#23 DONE 0.0s
+
+#24 [backend app 6/6] COPY migrations ./migrations
+#24 DONE 0.0s
+
+#25 [backend] exporting to image
+#25 exporting layers 0.0s done
+#25 exporting manifest sha256:bdce7d6bd522d176be9f5b03787f7d60ce5fcd485453fe49ca5c9b0aeed3b245 done
+#25 exporting config sha256:4038c6781933cc22f2642297694dcb7e07d46be4feb29e5955c1f1d43105a745 done
+#25 exporting attestation manifest sha256:ae1ac8e72a4c0d1bc762926ac68ea69ac2530e179513771ef9f3607863e56c96 done
+#25 exporting manifest list sha256:8981d0c4a1d782fd732aaf1dfe46921d564f546c2a04c733e83a0969309decaa
+#25 exporting manifest list sha256:8981d0c4a1d782fd732aaf1dfe46921d564f546c2a04c733e83a0969309decaa done
+#25 naming to docker.io/library/greenhouse-backend:1.0 done
+#25 unpacking to docker.io/library/greenhouse-backend:1.0 0.0s done
+#25 DONE 0.1s
+
+#26 [backend] resolving provenance for metadata file
+#26 DONE 0.0s
+ Image greenhouse-backend:1.0 Built 
+ Image greenhouse-web:1.0 Built 

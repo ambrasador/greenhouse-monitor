@@ -1,0 +1,42 @@
+{
+ "config": "start_interval 5 с (типове значення Docker)",
+ "runs": [
+  16.41,
+  16.3,
+  16.28
+ ],
+ "median": 16.3,
+ "total": 16.3,
+ "events": {
+  "greenhouse-mosquitto-1": [
+   [
+    0.5,
+    "start"
+   ],
+   [
+    5.46,
+    "health_status: healthy"
+   ]
+  ],
+  "greenhouse-backend-1": [
+   [
+    5.63,
+    "start"
+   ],
+   [
+    10.81,
+    "health_status: healthy"
+   ]
+  ],
+  "greenhouse-web-1": [
+   [
+    11.3,
+    "start"
+   ],
+   [
+    16.21,
+    "health_status: healthy"
+   ]
+  ]
+ }
+}

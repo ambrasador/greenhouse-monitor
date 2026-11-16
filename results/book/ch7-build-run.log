@@ -1,0 +1,18 @@
+cold: 17.4 с; кроків із кешу: 1
+warm: 0.7 с; кроків із кешу: 14
+code: 0.9 с; кроків із кешу: 12
+warm2: 0.8 с; кроків із кешу: 14
+manifest: 14.4 с; кроків із кешу: 6
+{
+ "seconds": {
+  "cold": 17.4,
+  "warm": 0.7,
+  "code": 0.9,
+  "afterRestore": 0.8,
+  "manifest": 14.4
+ },
+ "imageBytes": {
+  "greenhouse-backend:1.0": 410467534,
+  "greenhouse-web:1.0": 94921480
+ }
+}

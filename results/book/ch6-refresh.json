@@ -1,0 +1,17 @@
+{
+  "node": "v22.23.4",
+  "exchanges": 20000,
+  "exchangeUs": {
+    "median": 200.359,
+    "p99": 938.089,
+    "max": 23139.689
+  },
+  "exchangesPerSec": 4991.04108125914,
+  "rows": 20001,
+  "tableBytes": 6103040,
+  "bytesPerRow": 305.13674316284187,
+  "rowsPerDay": 96,
+  "retentionDays": 37,
+  "steadyRowsPerSession": 3552,
+  "steadyKiBPerSession": 1058.4430778461078
+}

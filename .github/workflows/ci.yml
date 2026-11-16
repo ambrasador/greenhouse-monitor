@@ -1,0 +1,108 @@
+# Конвеєр: lint → тести → образи → публікація. Усі дії закріплено за SHA
+# коміту (тег — у коментарі)
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  # токен лише для читання; ширші права задають окремі завдання
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  # випуск із main не скасовують
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/setup       # Node.js і npm ci
+      - run: npm run lint
+      - run: npm audit --omit=dev     # production без відомих вразливостей
+
+  test:
+    needs: lint
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/setup
+      - run: npm test
+      # Jest: unit + інтеграційні, поріг покриття в jest.config.js
+      - run: npm run test:coverage
+      # правила сповіщень: promtool у контейнері
+      - run: npm run test:rules
+
+  e2e:
+    needs: lint
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/setup
+      # SIGKILL посеред потоку, перезапуск; без браузера
+      - run: npm run e2e
+      # демонстраційний сервер віддає зібраний клієнт; у git його немає
+      - run: npm run build:client
+      - run: npx playwright install --with-deps chromium
+      # Jest + Playwright: картки пристроїв, недоступний сервер
+      - run: npm run test:e2e
+      # 23 перевірки дашборда в Chromium
+      - run: npm run e2e:dashboard
+
+  image:
+    needs: [test, e2e]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      # збирає обидва образи, піднімає Compose, проводить показання наскрізь
+      - run: ./smoke.sh
+      - if: failure()
+        run: docker compose logs --no-color --tail 100
+
+  publish:
+    needs: image
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: write                   # лише це завдання вміє писати в реєстр
+    strategy:
+      matrix:
+        include:
+          - { target: app, name: backend }
+          - { target: web, name: web }
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069  # v4.4.1
+      - uses: docker/login-action@8aa5831fb8d48d8f76594c7ddde61ae58019f550  # v4.8.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Ім’я образу малими літерами (вимога реєстру)
+        run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}/${{ matrix.name }}" >> "$GITHUB_ENV"
+      - uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc  # v7.4.0
+        with:
+          context: .
+          target: ${{ matrix.target }}
+          push: true
+          tags: ${{ env.IMAGE }}:${{ github.sha }}

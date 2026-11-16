@@ -1,0 +1,13 @@
+plain run 1 rc=0 # pass 341 # fail 0 
+plain run 2 rc=1 # pass 340 # fail 1 
+not ok 223 - хибний пароль, пошкоджений і чужий запис не проходять
+plain run 3 rc=0 # pass 341 # fail 0 
+plain run 4 rc=0 # pass 341 # fail 0 
+plain run 5 rc=0 # pass 341 # fail 0 
+plain run 6 rc=0 # pass 341 # fail 0 
+plain run 7 rc=0 # pass 341 # fail 0 
+plain run 8 rc=0 # pass 341 # fail 0 
+plain run 9 rc=0 # pass 341 # fail 0 
+plain run 10 rc=0 # pass 341 # fail 0 
+plain run 11 rc=0 # pass 342 # fail 0 
+plain run 12 rc=0 # pass 342 # fail 0 

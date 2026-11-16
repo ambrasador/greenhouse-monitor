@@ -1,0 +1,8 @@
+GET /api/v1/devices
+
+HTTP 429
+Content-Type: application/problem+json; charset=utf-8
+Retry-After: 1
+
+{"type": "https://greenhouse.example/problems/rate-limited", "title": "Перевищено ліміт запитів",
+ "status": 429, "retry_after_sec": 1}

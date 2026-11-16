@@ -1,0 +1,63 @@
+[
+ {
+  "impl": "legacy",
+  "mode": "cancel",
+  "runs": 3,
+  "opened": 3,
+  "cancelMs": [
+   14623,
+   14677,
+   14683
+  ],
+  "status200": 3,
+  "status429": 0
+ },
+ {
+  "impl": "abortable",
+  "mode": "cancel",
+  "runs": 20,
+  "opened": 20,
+  "cancelMs": [
+   2,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "status200": 20,
+  "status429": 0
+ },
+ {
+  "impl": "legacy",
+  "mode": "slots",
+  "runs": 10,
+  "opened": 6,
+  "cancelMs": [],
+  "status200": 6,
+  "status429": 14
+ },
+ {
+  "impl": "abortable",
+  "mode": "slots",
+  "runs": 10,
+  "opened": 10,
+  "cancelMs": [],
+  "status200": 10,
+  "status429": 0
+ }
+]

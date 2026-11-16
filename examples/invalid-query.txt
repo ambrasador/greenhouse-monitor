@@ -1,0 +1,21 @@
+GET /api/v1/telemetry
+  ?device=gh1-s01&metric=pressure
+  &form=2026-11-03&to=today
+
+HTTP 400
+Content-Type: application/problem+json; charset=utf-8
+
+{
+  "type": "https://greenhouse.example/problems/invalid-query",
+  "title": "Некоректні параметри запиту",
+  "status": 400,
+  "errors": [
+    {"param": "form", "message": "невідомий параметр"},
+    {
+      "param": "metric",
+      "message": "одна з: temperature, humidity, soil_moisture, light"
+    },
+    {"param": "from", "message": "обов’язковий параметр"},
+    {"param": "to", "message": "час UTC, наприклад 2026-11-03T13:00:00Z"}
+  ]
+}

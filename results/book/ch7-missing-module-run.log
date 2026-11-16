@@ -1,0 +1,98 @@
+{
+ "buildRc": 0,
+ "migrateJsInImage": false,
+ "upWaitRc": 1,
+ "upWaitSeconds": 3.8,
+ "upWaitMessage": "container gh7missing-backend-1 is unhealthy",
+ "logTail": [
+  "at Object.<anonymous> (/app/main.js:20:25)",
+  "    at Module._compile (node:internal/modules/cjs/loader:1781:14)",
+  "    at Object..js (node:internal/modules/cjs/loader:1913:10) {",
+  "  code: 'MODULE_NOT_FOUND',",
+  "  requireStack: [ '/app/main.js' ]",
+  "}",
+  "",
+  "Node.js v22.23.4"
+ ],
+ "attempts": [
+  {
+   "n": 1,
+   "runSeconds": 0.37,
+   "exitCode": 1,
+   "pauseAfterSeconds": 0.14
+  },
+  {
+   "n": 2,
+   "runSeconds": 0.4,
+   "exitCode": 1,
+   "pauseAfterSeconds": 0.23
+  },
+  {
+   "n": 3,
+   "runSeconds": 0.35,
+   "exitCode": 1,
+   "pauseAfterSeconds": 0.44
+  },
+  {
+   "n": 4,
+   "runSeconds": 0.42,
+   "exitCode": 1,
+   "pauseAfterSeconds": 0.84
+  },
+  {
+   "n": 5,
+   "runSeconds": 0.38,
+   "exitCode": 1,
+   "pauseAfterSeconds": 1.64
+  },
+  {
+   "n": 6,
+   "runSeconds": 0.38,
+   "exitCode": 1,
+   "pauseAfterSeconds": 3.25
+  },
+  {
+   "n": 7,
+   "runSeconds": 0.46,
+   "exitCode": 1,
+   "pauseAfterSeconds": 6.45
+  },
+  {
+   "n": 8,
+   "runSeconds": 0.4,
+   "exitCode": 1,
+   "pauseAfterSeconds": 12.84
+  },
+  {
+   "n": 9,
+   "runSeconds": 0.35,
+   "exitCode": 1,
+   "pauseAfterSeconds": 25.63
+  },
+  {
+   "n": 10,
+   "runSeconds": 0.37,
+   "exitCode": 1,
+   "pauseAfterSeconds": 51.24
+  },
+  {
+   "n": 11,
+   "runSeconds": 0.37,
+   "exitCode": 1,
+   "pauseAfterSeconds": 60.03
+  },
+  {
+   "n": 12,
+   "runSeconds": 0.39,
+   "exitCode": 1,
+   "pauseAfterSeconds": 60.03
+  },
+  {
+   "n": 13,
+   "runSeconds": 0.41,
+   "exitCode": 1,
+   "pauseAfterSeconds": null
+  }
+ ],
+ "observedSeconds": 240.0
+}

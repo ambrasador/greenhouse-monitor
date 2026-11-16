@@ -1,0 +1,33 @@
+{
+ "lib/core": {
+  "files": 19,
+  "lines": 1661
+ },
+ "lib/platform": {
+  "files": 3,
+  "lines": 94
+ },
+ "lib/ui": {
+  "files": 3,
+  "lines": 532
+ },
+ "lib/main.dart": {
+  "files": 1,
+  "lines": 127
+ },
+ "test": {
+  "files": 13,
+  "lines": 2623
+ },
+ "test/integration": {
+  "files": 1,
+  "lines": 509
+ },
+ "lib_total": 2414,
+ "share_pct": {
+  "lib/core": 68.8,
+  "lib/platform": 3.9,
+  "lib/ui": 22.0,
+  "lib/main.dart": 5.3
+ }
+}

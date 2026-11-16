@@ -1,0 +1,45 @@
+[
+ {
+  "t": 0.3,
+  "phase": "брокер зупинено"
+ },
+ {
+  "t": 0.5,
+  "phase": "брокера немає",
+  "readyz": "503",
+  "health": "healthy",
+  "restarts": 0
+ },
+ {
+  "t": 43.2,
+  "phase": "брокера немає",
+  "readyz": "503",
+  "health": "unhealthy",
+  "restarts": 0
+ },
+ {
+  "t": 70.4,
+  "phase": "брокер запущено"
+ },
+ {
+  "t": 70.9,
+  "phase": "брокер повернувся",
+  "readyz": "503",
+  "health": "unhealthy",
+  "restarts": 0
+ },
+ {
+  "t": 72.7,
+  "phase": "брокер повернувся",
+  "readyz": "200",
+  "health": "unhealthy",
+  "restarts": 0
+ },
+ {
+  "t": 73.1,
+  "phase": "брокер повернувся",
+  "readyz": "200",
+  "health": "healthy",
+  "restarts": 0
+ }
+]

@@ -1,0 +1,35 @@
+{
+  "node": "v22.23.4",
+  "cost": [
+    {
+      "bytes": 256,
+      "hmacUs": 4.280576448,
+      "withReplayUs": 7.895968831999999
+    },
+    {
+      "bytes": 1024,
+      "hmacUs": 5.256278889969792,
+      "withReplayUs": 9.106838129128052
+    },
+    {
+      "bytes": 16384,
+      "hmacUs": 16.13555551003687,
+      "withReplayUs": 30.933216714461288
+    },
+    {
+      "bytes": 65536,
+      "hmacUs": 55.31593114754099,
+      "withReplayUs": 114.24534590163933
+    },
+    {
+      "bytes": 262144,
+      "hmacUs": 181.21303999999998,
+      "withReplayUs": 412.4188666666667
+    }
+  ],
+  "replay": {
+    "entries": 200000,
+    "bytesPerEntry": 117.502
+  },
+  "guessPerSec": 397022.3093876174
+}

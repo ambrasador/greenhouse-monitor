@@ -1,0 +1,34 @@
+{
+ "events": [
+  {
+   "t": 40,
+   "what": "sse-open",
+   "streams": 3
+  },
+  {
+   "t": 60.01,
+   "what": "ws-open",
+   "clients": 5
+  },
+  {
+   "t": 143.9,
+   "what": "bad-logins",
+   "names": 12
+  },
+  {
+   "t": 150,
+   "what": "ws-close"
+  },
+  {
+   "t": 160,
+   "what": "sse-close"
+  }
+ ],
+ "sseEvents": 36,
+ "wsFrames": 1070,
+ "http": {
+  "200": 198,
+  "404": 21,
+  "login401": 12
+ }
+}

@@ -1,0 +1,62 @@
+[
+ {
+  "name": "react + react-dom",
+  "minKB": 217.5,
+  "gzipKB": 67.3
+ },
+ {
+  "name": "react + react-dom + recharts (ComposedChart, Line, Area, оси, ReferenceLine, Tooltip)",
+  "minKB": 603.8,
+  "gzipKB": 179.2
+ },
+ {
+  "name": "chart.js/auto (усі контролери й шкали)",
+  "minKB": 201.3,
+  "gzipKB": 69.3
+ },
+ {
+  "name": "chart.js, лише лінійний графік (дерево імпортів)",
+  "minKB": 158.6,
+  "gzipKB": 55.9
+ },
+ {
+  "name": "@tanstack/react-query (без react)",
+  "minKB": 36.4,
+  "gzipKB": 11
+ },
+ {
+  "name": "d3-scale + d3-shape (scaleTime, scaleLinear, line, area)",
+  "minKB": 60.8,
+  "gzipKB": 19.2
+ },
+ {
+  "name": "mqtt (клієнт для браузера)",
+  "minKB": 331.5,
+  "gzipKB": 102.3
+ },
+ {
+  "name": "leaflet (JS)",
+  "minKB": 146.8,
+  "gzipKB": 42.5
+ },
+ {
+  "name": "leaflet.css (зображення вбудовано як data URL)",
+  "minKB": 15.2,
+  "gzipKB": 6.3
+ },
+ {
+  "name": "сторінка дашборда: повністю",
+  "minKB": 707,
+  "gzipKB": 212.6
+ },
+ {
+  "name": "сторінка демонстраційного потоку (app.jsx): із mqtt",
+  "minKB": 929,
+  "gzipKB": 283.4
+ },
+ {
+  "name": "код застосунку без сторонніх пакетів",
+  "minKB": 18.9,
+  "gzipKB": 7.9
+ }
+]

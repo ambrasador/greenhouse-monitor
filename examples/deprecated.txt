@@ -1,0 +1,11 @@
+GET /api/v1/devices/gh1-s01/latest
+
+HTTP 200
+Content-Type: application/json; charset=utf-8
+Deprecation: @1793664000
+Sunset: Mon, 03 May 2027 00:00:00 GMT
+
+[
+  {"metric": "temperature", "ts": "2026-11-03T11:59:00.000Z",
+   "value": 21.9}
+]

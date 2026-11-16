@@ -1,0 +1,290 @@
+[
+ {
+  "scenario": "hover",
+  "sigma": 0.3,
+  "policy": "naive",
+  "mean": 718.8,
+  "min": 688,
+  "max": 757
+ },
+ {
+  "scenario": "hover",
+  "sigma": 0.3,
+  "policy": "edge",
+  "mean": 360.3,
+  "min": 347,
+  "max": 378
+ },
+ {
+  "scenario": "hover",
+  "sigma": 0.3,
+  "policy": "cooldown",
+  "mean": 119.8,
+  "min": 116,
+  "max": 123
+ },
+ {
+  "scenario": "hover",
+  "sigma": 0.3,
+  "policy": "hyst1",
+  "mean": 1.5,
+  "min": 1,
+  "max": 3
+ },
+ {
+  "scenario": "hover",
+  "sigma": 0.3,
+  "policy": "hyst2",
+  "mean": 1,
+  "min": 1,
+  "max": 1
+ },
+ {
+  "scenario": "hover",
+  "sigma": 0.3,
+  "policy": "full",
+  "mean": 1,
+  "min": 1,
+  "max": 1
+ },
+ {
+  "scenario": "hover",
+  "sigma": 0.6,
+  "policy": "naive",
+  "mean": 718.8,
+  "min": 688,
+  "max": 757
+ },
+ {
+  "scenario": "hover",
+  "sigma": 0.6,
+  "policy": "edge",
+  "mean": 360.3,
+  "min": 347,
+  "max": 378
+ },
+ {
+  "scenario": "hover",
+  "sigma": 0.6,
+  "policy": "cooldown",
+  "mean": 119.8,
+  "min": 116,
+  "max": 123
+ },
+ {
+  "scenario": "hover",
+  "sigma": 0.6,
+  "policy": "hyst1",
+  "mean": 63.3,
+  "min": 50,
+  "max": 74
+ },
+ {
+  "scenario": "hover",
+  "sigma": 0.6,
+  "policy": "hyst2",
+  "mean": 1.5,
+  "min": 1,
+  "max": 3
+ },
+ {
+  "scenario": "hover",
+  "sigma": 0.6,
+  "policy": "full",
+  "mean": 1.5,
+  "min": 1,
+  "max": 3
+ },
+ {
+  "scenario": "hover",
+  "sigma": 1,
+  "policy": "naive",
+  "mean": 718.8,
+  "min": 688,
+  "max": 757
+ },
+ {
+  "scenario": "hover",
+  "sigma": 1,
+  "policy": "edge",
+  "mean": 360.3,
+  "min": 347,
+  "max": 378
+ },
+ {
+  "scenario": "hover",
+  "sigma": 1,
+  "policy": "cooldown",
+  "mean": 119.8,
+  "min": 116,
+  "max": 123
+ },
+ {
+  "scenario": "hover",
+  "sigma": 1,
+  "policy": "hyst1",
+  "mean": 175.8,
+  "min": 159,
+  "max": 194
+ },
+ {
+  "scenario": "hover",
+  "sigma": 1,
+  "policy": "hyst2",
+  "mean": 31.6,
+  "min": 20,
+  "max": 46
+ },
+ {
+  "scenario": "hover",
+  "sigma": 1,
+  "policy": "full",
+  "mean": 27.8,
+  "min": 19,
+  "max": 41
+ },
+ {
+  "scenario": "drying",
+  "sigma": 0.3,
+  "policy": "naive",
+  "mean": 785,
+  "min": 776,
+  "max": 795
+ },
+ {
+  "scenario": "drying",
+  "sigma": 0.3,
+  "policy": "edge",
+  "mean": 45.2,
+  "min": 36,
+  "max": 58
+ },
+ {
+  "scenario": "drying",
+  "sigma": 0.3,
+  "policy": "cooldown",
+  "mean": 20.2,
+  "min": 16,
+  "max": 25
+ },
+ {
+  "scenario": "drying",
+  "sigma": 0.3,
+  "policy": "hyst1",
+  "mean": 3.7,
+  "min": 2,
+  "max": 6
+ },
+ {
+  "scenario": "drying",
+  "sigma": 0.3,
+  "policy": "hyst2",
+  "mean": 2,
+  "min": 2,
+  "max": 2
+ },
+ {
+  "scenario": "drying",
+  "sigma": 0.3,
+  "policy": "full",
+  "mean": 2,
+  "min": 2,
+  "max": 2
+ },
+ {
+  "scenario": "drying",
+  "sigma": 0.6,
+  "policy": "naive",
+  "mean": 783.9,
+  "min": 766,
+  "max": 799
+ },
+ {
+  "scenario": "drying",
+  "sigma": 0.6,
+  "policy": "edge",
+  "mean": 87.3,
+  "min": 75,
+  "max": 100
+ },
+ {
+  "scenario": "drying",
+  "sigma": 0.6,
+  "policy": "cooldown",
+  "mean": 38.7,
+  "min": 34,
+  "max": 43
+ },
+ {
+  "scenario": "drying",
+  "sigma": 0.6,
+  "policy": "hyst1",
+  "mean": 26.3,
+  "min": 20,
+  "max": 34
+ },
+ {
+  "scenario": "drying",
+  "sigma": 0.6,
+  "policy": "hyst2",
+  "mean": 6.2,
+  "min": 3,
+  "max": 10
+ },
+ {
+  "scenario": "drying",
+  "sigma": 0.6,
+  "policy": "full",
+  "mean": 5.9,
+  "min": 3,
+  "max": 10
+ },
+ {
+  "scenario": "drying",
+  "sigma": 1,
+  "policy": "naive",
+  "mean": 785.5,
+  "min": 769,
+  "max": 804
+ },
+ {
+  "scenario": "drying",
+  "sigma": 1,
+  "policy": "edge",
+  "mean": 140.6,
+  "min": 120,
+  "max": 153
+ },
+ {
+  "scenario": "drying",
+  "sigma": 1,
+  "policy": "cooldown",
+  "mean": 60.9,
+  "min": 56,
+  "max": 66
+ },
+ {
+  "scenario": "drying",
+  "sigma": 1,
+  "policy": "hyst1",
+  "mean": 78,
+  "min": 68,
+  "max": 91
+ },
+ {
+  "scenario": "drying",
+  "sigma": 1,
+  "policy": "hyst2",
+  "mean": 33.4,
+  "min": 27,
+  "max": 41
+ },
+ {
+  "scenario": "drying",
+  "sigma": 1,
+  "policy": "full",
+  "mean": 25.2,
+  "min": 20,
+  "max": 33
+ }
+]

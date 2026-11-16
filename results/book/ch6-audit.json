@@ -1,0 +1,18 @@
+{
+  "node": "v22.23.4",
+  "rows": 20000,
+  "recordUs": {
+    "median": 189.653,
+    "p99": 415.17,
+    "max": 11747.998
+  },
+  "recordsPerSec": 5272.787670113313,
+  "bytesPerRow": 126.7712,
+  "flood": {
+    "perIpRate": 100,
+    "rowsPerDay": 8640000,
+    "mbPerDay": 1095.303168,
+    "coreShare": 0.0189653,
+    "daysToFill10Gb": 9.129892336803685
+  }
+}

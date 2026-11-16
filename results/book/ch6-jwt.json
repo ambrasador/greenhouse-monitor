@@ -1,0 +1,47 @@
+{
+  "node": "v22.23.4",
+  "jsonwebtoken": "9.0.3",
+  "rows": [
+    {
+      "alg": "HS256",
+      "label": "HS256, секрет-буфер",
+      "tokenBytes": 423,
+      "signUs": 27.7944957,
+      "verifyUs": 34.4702815,
+      "verifyPerSec": 29010.497056718265,
+      "signPerSec": 35978.34660479197
+    },
+    {
+      "alg": "HS256",
+      "label": "HS256, KeyObject",
+      "tokenBytes": 423,
+      "signUs": 8.968566150000001,
+      "verifyUs": 9.75719615,
+      "verifyPerSec": 102488.45924861313,
+      "signPerSec": 111500.54348431158
+    },
+    {
+      "alg": "RS256",
+      "label": "RS256",
+      "tokenBytes": 722,
+      "signUs": 431.0817466666667,
+      "verifyUs": 51.043146666666665,
+      "verifyPerSec": 19591.268667866872,
+      "signPerSec": 2319.7456346330723
+    },
+    {
+      "alg": "ES256",
+      "label": "ES256",
+      "tokenBytes": 466,
+      "signUs": 39.4346455,
+      "verifyUs": 94.963727,
+      "verifyPerSec": 10530.33649363825,
+      "signPerSec": 25358.4123128481
+    }
+  ],
+  "parts": {
+    "header": 55,
+    "payload": 323,
+    "signature": 43
+  }
+}

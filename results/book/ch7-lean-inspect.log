@@ -1,0 +1,4 @@
+1000
+ls: cannot access '/app/.env': No such file or directory
+46
+64	/app/node_modules

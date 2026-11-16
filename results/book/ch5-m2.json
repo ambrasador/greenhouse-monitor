@@ -1,0 +1,32 @@
+[
+ {
+  "n": 100,
+  "skewMs": 37300,
+  "errMinMs": -490,
+  "errMaxMs": 498,
+  "absMeanMs": 247.44,
+  "absP95Ms": 474,
+  "rttMedianUs": 3097,
+  "rttMaxUs": 152578
+ },
+ {
+  "n": 100,
+  "skewMs": -12900,
+  "errMinMs": -494,
+  "errMaxMs": 495,
+  "absMeanMs": 249.62,
+  "absP95Ms": 476,
+  "rttMedianUs": 3061,
+  "rttMaxUs": 102925
+ },
+ {
+  "n": 100,
+  "skewMs": 0,
+  "errMinMs": -497,
+  "errMaxMs": 492,
+  "absMeanMs": 251.78,
+  "absP95Ms": 476,
+  "rttMedianUs": 3232,
+  "rttMaxUs": 129086
+ }
+]

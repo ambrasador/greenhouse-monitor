@@ -1,0 +1,28 @@
+{
+ "published": 3,
+ "browserViaBroker": [
+  "{\"metric\":\"temperature\",\"value\":21.4,\"ts\":\"2026-11-04T03:02:48.233Z\"}",
+  "{\"metric\":\"temperature\",\"value\":999,\"ts\":\"2026-11-04T03:02:48.234Z\"}",
+  "{\"metric\":\"temperature\",\"value\":21.5,\"ts\":\"2026-11-04T03:02:49Z\"}"
+ ],
+ "browserViaServer": [
+  "{\"device\":\"gh1-s01\",\"metric\":\"temperature\",\"ts\":\"2026-11-04T03:02:48.233Z\",\"value\":21.4}",
+  "{\"device\":\"gh1-s01\",\"metric\":\"temperature\",\"ts\":\"2026-11-04T03:02:49.000Z\",\"value\":21.5}"
+ ],
+ "rejected": [
+  {
+   "reason": "out_of_range",
+   "raw": "{\"deviceId\":\"gh1-s01\",\"metric\":\"temperature\",\"value\":999,\"ts\":\"2026-11-04T03:02:48.234Z\"}"
+  }
+ ],
+ "stored": [
+  {
+   "ts": "2026-11-04T03:02:48.233Z",
+   "value": 21.4
+  },
+  {
+   "ts": "2026-11-04T03:02:49.000Z",
+   "value": 21.5
+  }
+ ]
+}

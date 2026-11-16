@@ -1,0 +1,7 @@
+start_interval 5 с (типове значення Docker) 16.41 s rc=0
+start_interval 5 с (типове значення Docker) 16.3 s rc=0
+start_interval 5 с (типове значення Docker) 16.28 s rc=0
+start_interval 1 с (як у репозиторії) 5.34 s rc=0
+start_interval 1 с (як у репозиторії) 5.33 s rc=0
+start_interval 1 с (як у репозиторії) 5.33 s rc=0
+перша проба після старту: {'типове значення': 5.3, '1 с': 1.3}

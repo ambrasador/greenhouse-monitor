@@ -1,0 +1,10 @@
+# Закінчення рядків: LF і в репозиторії, і в робочих копіях.
+# Без цього файла Git for Windows віддає текстові файли з CRLF, і сценарії .sh не запускаються в Linux, Docker і CI.
+* text=auto eol=lf
+*.sh text eol=lf
+
+# Байт-точний знімок запиту WebSocket (його пише calc3-handshake.mjs): CRLF у ньому обов'язкові, Git їх не чіпає.
+examples/*.raw -text
+
+# Двійкові файли (шрифти для тестів мобільного клієнта)
+*.ttf binary

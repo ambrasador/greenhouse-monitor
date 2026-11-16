@@ -1,0 +1,12 @@
+холодний кеш: 9.8 11.9 12.3 с; node_modules 248 МБ
+теплий кеш: 10.3 10.3 10.1 с; node_modules 248 МБ
+теплий кеш, лише production: 2.9 2.9 3.0 с; node_modules 64 МБ
+пакетів у lock-файлі: 683 ; production 164 ; лише для розробки 519
+audit --omit=dev: found 0 vulnerabilities
+audit (усі): 25 vulnerabilities (3 low, 22 moderate)
+audit (усі), за серйозністю: {'info': 0, 'low': 3, 'moderate': 22, 'high': 0, 'critical': 0, 'total': 25}
+SBOM CycloneDX 1.5 (production): компонентів 110 ; файл 156864 Б
+npm 10.9.9; npm ls --omit=dev --all: пакетів 164
+прямі залежності, яких немає в SBOM: ['ajv']
+SBOM повного дерева (без --omit): 629 компонентів
+npm sbom на дереві, встановленому з --omit=dev: npm error code ESBOMPROBLEMS npm error missing: @eslint/js@^10.0.1, required by greenhouse-monitor@1.0.0 

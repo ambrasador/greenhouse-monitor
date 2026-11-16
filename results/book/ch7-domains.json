@@ -1,0 +1,76 @@
+{
+ "tEval": 60,
+ "tScrape": 15,
+ "rows": [
+  {
+   "domain": "Теплиця",
+   "N": 200,
+   "m": 4,
+   "T": 60,
+   "lambda": 13.3,
+   "gapMean": 0.075,
+   "threshold": 300,
+   "missed": 4000,
+   "delayMax": 375,
+   "delayVsT": 6.25,
+   "gaugeBytes": 15600,
+   "histBytes": 153800
+  },
+  {
+   "domain": "Розумний будинок",
+   "N": 3000,
+   "m": 1,
+   "T": 300,
+   "lambda": 10.0,
+   "gapMean": 0.1,
+   "threshold": 1500,
+   "missed": 15000,
+   "delayMax": 1575,
+   "delayVsT": 5.25,
+   "gaugeBytes": 234000,
+   "histBytes": 2307000
+  },
+  {
+   "domain": "Облік комунальних послуг",
+   "N": 100000,
+   "m": 1,
+   "T": 900,
+   "lambda": 111.1,
+   "gapMean": 0.009,
+   "threshold": 4500,
+   "missed": 500000,
+   "delayMax": 4575,
+   "delayVsT": 5.083333333333333,
+   "gaugeBytes": 7800000,
+   "histBytes": 76900000
+  },
+  {
+   "domain": "Транспортний парк",
+   "N": 300,
+   "m": 1,
+   "T": 5,
+   "lambda": 60.0,
+   "gapMean": 0.016666666666666666,
+   "threshold": 25,
+   "missed": 1500,
+   "delayMax": 100,
+   "delayVsT": 20.0,
+   "gaugeBytes": 23400,
+   "histBytes": 230700
+  },
+  {
+   "domain": "Інфраструктура громади",
+   "N": 1500,
+   "m": 1,
+   "T": 300,
+   "lambda": 5.0,
+   "gapMean": 0.2,
+   "threshold": 1500,
+   "missed": 7500,
+   "delayMax": 1575,
+   "delayVsT": 5.25,
+   "gaugeBytes": 117000,
+   "histBytes": 1153500
+  }
+ ]
+}

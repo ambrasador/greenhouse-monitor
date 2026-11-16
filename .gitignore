@@ -1,0 +1,10 @@
+node_modules/
+.env
+coverage/
+*.db
+*.db-wal
+*.db-shm
+client/dist/
+wire-dist/mqtt.min.js
+results/*
+!results/book/

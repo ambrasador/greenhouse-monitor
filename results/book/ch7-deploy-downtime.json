@@ -1,0 +1,50 @@
+[
+ {
+  "label": "оновлення коду",
+  "composeUpSeconds": 3.39,
+  "ipBefore": "172.18.0.3",
+  "ipAfter": "172.18.0.3",
+  "rc": 0,
+  "firstBadAtS": 1.07,
+  "lastBadAtS": 2.22,
+  "outageSeconds": 1.15,
+  "codes": {
+   "401": 26,
+   "429": 249,
+   "502": 6,
+   "0": 2
+  },
+  "probeCount": 283,
+  "finalCodes": [
+   429,
+   429,
+   429,
+   429,
+   429
+  ]
+ },
+ {
+  "label": "повернення коду",
+  "composeUpSeconds": 3.26,
+  "ipBefore": "172.18.0.3",
+  "ipAfter": "172.18.0.3",
+  "rc": 0,
+  "firstBadAtS": 0.92,
+  "lastBadAtS": 2.05,
+  "outageSeconds": 1.13,
+  "codes": {
+   "429": 259,
+   "401": 16,
+   "502": 5,
+   "0": 2
+  },
+  "probeCount": 282,
+  "finalCodes": [
+   429,
+   429,
+   429,
+   429,
+   429
+  ]
+ }
+]

@@ -1,0 +1,7 @@
+{
+  "data": [
+    {"ts": "2026-11-03T09:00:00.000Z", "value": 21},
+    {"ts": "2026-11-03T09:01:00.000Z", "value": 21.1}
+  ],
+  "next": "eyJrIjoiMjAyNi0xMS0wM1QwOTowMTowMC4wMDBaIiwicSI6IjZEM1ZhTW1EZGV6biJ9"
+}

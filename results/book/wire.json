@@ -1,0 +1,342 @@
+{
+ "chromium": "153.0.8010.12",
+ "idleSec": 61,
+ "pushes": 10,
+ "kinds": {
+  "poll": {
+   "setupMs": 14,
+   "setupRequests": 0,
+   "pageLoad": null,
+   "setup": {
+    "up": 0,
+    "down": 0,
+    "conns": 0
+   },
+   "push": {
+    "up": 11608,
+    "down": 8500,
+    "conns": 0
+   },
+   "idle": {
+    "up": 0,
+    "down": 0,
+    "conns": 0
+   },
+   "conns": 2,
+   "perPush": {
+    "up": 1160.8,
+    "down": 850
+   }
+  },
+  "ws-raw": {
+   "setupMs": 47,
+   "setupRequests": 0,
+   "pageLoad": null,
+   "setup": {
+    "up": 468,
+    "down": 129,
+    "conns": 1
+   },
+   "push": {
+    "up": 0,
+    "down": 3120,
+    "conns": 0
+   },
+   "idle": {
+    "up": 0,
+    "down": 0,
+    "conns": 0
+   },
+   "conns": 1,
+   "perPush": {
+    "up": 0,
+    "down": 312
+   }
+  },
+  "sse": {
+   "setupMs": 48,
+   "setupRequests": 1,
+   "pageLoad": null,
+   "setup": {
+    "up": 628,
+    "down": 311,
+    "conns": 0
+   },
+   "push": {
+    "up": 0,
+    "down": 5700,
+    "conns": 0
+   },
+   "idle": {
+    "up": 0,
+    "down": 104,
+    "conns": 0
+   },
+   "conns": 2,
+   "perPush": {
+    "up": 0,
+    "down": 570
+   }
+  },
+  "socketio-ws": {
+   "setupMs": 92,
+   "setupRequests": 0,
+   "pageLoad": null,
+   "setup": {
+    "up": 555,
+    "down": 322,
+    "conns": 1
+   },
+   "push": {
+    "up": 0,
+    "down": 3350,
+    "conns": 0
+   },
+   "idle": {
+    "up": 14,
+    "down": 6,
+    "conns": 0
+   },
+   "conns": 3,
+   "perPush": {
+    "up": 0,
+    "down": 335
+   }
+  },
+  "socketio-poll": {
+   "setupMs": 99,
+   "setupRequests": 6,
+   "pageLoad": null,
+   "setup": {
+    "up": 3577,
+    "down": 1242,
+    "conns": 0
+   },
+   "push": {
+    "up": 5630,
+    "down": 5530,
+    "conns": 0
+   },
+   "idle": {
+    "up": 2438,
+    "down": 854,
+    "conns": 1
+   },
+   "conns": 3,
+   "perPush": {
+    "up": 563,
+    "down": 553
+   }
+  },
+  "socketio-upgrade": {
+   "setupMs": 102,
+   "setupRequests": 5,
+   "pageLoad": null,
+   "setup": {
+    "up": 3562,
+    "down": 1411,
+    "conns": 1
+   },
+   "push": {
+    "up": 0,
+    "down": 3350,
+    "conns": 0
+   },
+   "idle": {
+    "up": 14,
+    "down": 6,
+    "conns": 0
+   },
+   "conns": 3,
+   "perPush": {
+    "up": 0,
+    "down": 335
+   }
+  },
+  "mqtt": {
+   "setupMs": 133,
+   "setupRequests": 1,
+   "pageLoad": null,
+   "setup": {
+    "up": 574,
+    "down": 184,
+    "conns": 1
+   },
+   "push": {
+    "up": 0,
+    "down": 4390,
+    "conns": 0
+   },
+   "idle": {
+    "up": 8,
+    "down": 4,
+    "conns": 0
+   },
+   "conns": 1,
+   "perPush": {
+    "up": 0,
+    "down": 439
+   }
+  }
+ },
+ "expectedReadings": 40,
+ "receivedReadings": {
+  "sse": 40,
+  "socketio-ws": 40,
+  "socketio-poll": 40,
+  "socketio-upgrade": 40,
+  "ws-raw": 40,
+  "mqtt": 40
+ },
+ "poll": {
+  "withData": [
+   {
+    "up": 531,
+    "down": 671,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 671,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 671,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 671,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 671,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 671,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 671,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 671,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 671,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 671,
+    "conns": 0
+   }
+  ],
+  "noChange": [
+   {
+    "up": 583,
+    "down": 179,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 179,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 179,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 179,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 179,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 179,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 179,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 179,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 179,
+    "conns": 0
+   },
+   {
+    "up": 583,
+    "down": 179,
+    "conns": 0
+   }
+  ]
+ },
+ "requestsAfterSetup": {
+  "poll": [
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99",
+   "GET /api/v1/devices/gh9-s99"
+  ],
+  "sse": [],
+  "socketio-ws": [],
+  "socketio-poll": [
+   "GET /socket.io/?EIO=4&transport=polling&t=jxff6xk0&sid=fur5RRPKEVPAdFBuAAAB",
+   "GET /socket.io/?EIO=4&transport=polling&t=jxfr1k9p&sid=fur5RRPKEVPAdFBuAAAB",
+   "GET /socket.io/?EIO=4&transport=polling&t=jxg2l6lh&sid=fur5RRPKEVPAdFBuAAAB",
+   "GET /socket.io/?EIO=4&transport=polling&t=jxge8ffr&sid=fur5RRPKEVPAdFBuAAAB",
+   "GET /socket.io/?EIO=4&transport=polling&t=jxgpzc05&sid=fur5RRPKEVPAdFBuAAAB",
+   "GET /socket.io/?EIO=4&transport=polling&t=jxh1qog1&sid=fur5RRPKEVPAdFBuAAAB",
+   "GET /socket.io/?EIO=4&transport=polling&t=jxhdaj41&sid=fur5RRPKEVPAdFBuAAAB",
+   "GET /socket.io/?EIO=4&transport=polling&t=jxhov9ga&sid=fur5RRPKEVPAdFBuAAAB",
+   "GET /socket.io/?EIO=4&transport=polling&t=jxi0ng8p&sid=fur5RRPKEVPAdFBuAAAB",
+   "GET /socket.io/?EIO=4&transport=polling&t=jxicfrc8&sid=fur5RRPKEVPAdFBuAAAB",
+   "POST /socket.io/?EIO=4&transport=polling&t=jxybklch&sid=fur5RRPKEVPAdFBuAAAB",
+   "GET /socket.io/?EIO=4&transport=polling&t=jxyblva4&sid=fur5RRPKEVPAdFBuAAAB",
+   "POST /socket.io/?EIO=4&transport=polling&t=jyhm6bbb&sid=fur5RRPKEVPAdFBuAAAB",
+   "GET /socket.io/?EIO=4&transport=polling&t=jyhm6vlr&sid=fur5RRPKEVPAdFBuAAAB"
+  ],
+  "socketio-upgrade": [],
+  "ws-raw": [],
+  "mqtt": []
+ }
+}

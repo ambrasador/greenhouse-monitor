@@ -1,0 +1,3 @@
+extends: [recommended]
+rules:
+  security-defined: warn   # схему безпеки буде додано в розділі 6

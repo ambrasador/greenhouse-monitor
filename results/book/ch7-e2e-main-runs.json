@@ -1,0 +1,100 @@
+{
+ "runs": [
+  {
+   "survived": 77,
+   "redelivered_dups": 1,
+   "stored": 523,
+   "duplicate": 601,
+   "rc": 0,
+   "seconds": 1.64
+  },
+  {
+   "survived": 48,
+   "redelivered_dups": 0,
+   "stored": 552,
+   "duplicate": 600,
+   "rc": 0,
+   "seconds": 1.66
+  },
+  {
+   "survived": 29,
+   "redelivered_dups": 1,
+   "stored": 571,
+   "duplicate": 601,
+   "rc": 0,
+   "seconds": 1.69
+  },
+  {
+   "survived": 60,
+   "redelivered_dups": 0,
+   "stored": 540,
+   "duplicate": 600,
+   "rc": 0,
+   "seconds": 1.61
+  },
+  {
+   "survived": 30,
+   "redelivered_dups": 1,
+   "stored": 570,
+   "duplicate": 601,
+   "rc": 0,
+   "seconds": 1.5
+  },
+  {
+   "survived": 29,
+   "redelivered_dups": 1,
+   "stored": 571,
+   "duplicate": 601,
+   "rc": 0,
+   "seconds": 1.57
+  },
+  {
+   "survived": 25,
+   "redelivered_dups": 0,
+   "stored": 575,
+   "duplicate": 600,
+   "rc": 0,
+   "seconds": 1.61
+  },
+  {
+   "survived": 39,
+   "redelivered_dups": 0,
+   "stored": 561,
+   "duplicate": 600,
+   "rc": 0,
+   "seconds": 1.75
+  },
+  {
+   "survived": 63,
+   "redelivered_dups": 1,
+   "stored": 537,
+   "duplicate": 601,
+   "rc": 0,
+   "seconds": 1.59
+  },
+  {
+   "survived": 34,
+   "redelivered_dups": 5,
+   "stored": 566,
+   "duplicate": 605,
+   "rc": 0,
+   "seconds": 1.53
+  },
+  {
+   "survived": 27,
+   "redelivered_dups": 3,
+   "stored": 573,
+   "duplicate": 603,
+   "rc": 0,
+   "seconds": 1.58
+  },
+  {
+   "survived": 24,
+   "redelivered_dups": 1,
+   "stored": 576,
+   "duplicate": 601,
+   "rc": 0,
+   "seconds": 1.56
+  }
+ ]
+}

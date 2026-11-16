@@ -1,0 +1,15 @@
+cov run 1 rc=1 # pass 340 # fail 1 
+not ok 223 - хибний пароль, пошкоджений і чужий запис не проходять
+cov run 2 rc=0 # pass 341 # fail 0 
+cov run 3 rc=0 # pass 341 # fail 0 
+cov run 4 rc=0 # pass 341 # fail 0 
+cov run 5 rc=0 # pass 341 # fail 0 
+cov run 6 rc=0 # pass 341 # fail 0 
+cov run 7 rc=0 # pass 341 # fail 0 
+cov run 8 rc=1 # pass 340 # fail 1 
+not ok 223 - хибний пароль, пошкоджений і чужий запис не проходять
+cov run 9 rc=0 # pass 341 # fail 0 
+cov run 10 rc=1 # pass 340 # fail 1 
+not ok 223 - хибний пароль, пошкоджений і чужий запис не проходять
+cov run 11 rc=0 # pass 341 # fail 0 
+cov run 12 rc=0 # pass 341 # fail 0 

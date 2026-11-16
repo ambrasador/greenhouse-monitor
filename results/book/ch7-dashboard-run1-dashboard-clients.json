@@ -1,0 +1,24 @@
+{
+ "events": [
+  {
+   "t": 40,
+   "what": "sse-open",
+   "streams": 3
+  },
+  {
+   "t": 143.82,
+   "what": "bad-logins",
+   "names": 12
+  },
+  {
+   "t": 160.01,
+   "what": "sse-close"
+  }
+ ],
+ "sseEvents": 36,
+ "http": {
+  "200": 198,
+  "404": 21,
+  "login401": 12
+ }
+}

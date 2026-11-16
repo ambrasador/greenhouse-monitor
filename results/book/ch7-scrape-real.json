@@ -1,0 +1,10 @@
+{
+ "requests": 300,
+ "bytes": 17966,
+ "lines": 258,
+ "series": 178,
+ "medianMs": 2.380330000000015,
+ "p99Ms": 6.622579999999999,
+ "maxMs": 9.291330000000016,
+ "serverCpuMsPerRequest": 1.9442890365448278
+}

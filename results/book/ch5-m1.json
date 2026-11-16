@@ -1,0 +1,332 @@
+[
+ {
+  "q": 0.05,
+  "mode": "none",
+  "N": 1000,
+  "rows": 1049,
+  "duplicates": 49,
+  "extraPct": 4.9,
+  "theoryRows": 1052.6,
+  "proxy": {
+   "requests": 1049,
+   "droppedBefore": 0,
+   "droppedAfter": 49,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "none",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 1049,
+   "requestsLost": 49
+  }
+ },
+ {
+  "q": 0.05,
+  "mode": "per-attempt",
+  "N": 1000,
+  "rows": 1045,
+  "duplicates": 45,
+  "extraPct": 4.5,
+  "theoryRows": 1052.6,
+  "proxy": {
+   "requests": 1045,
+   "droppedBefore": 0,
+   "droppedAfter": 45,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "per-attempt",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 1045,
+   "requestsLost": 45
+  }
+ },
+ {
+  "q": 0.05,
+  "mode": "per-action",
+  "N": 1000,
+  "rows": 1000,
+  "duplicates": 0,
+  "extraPct": 0,
+  "theoryRows": 1000,
+  "proxy": {
+   "requests": 1062,
+   "droppedBefore": 0,
+   "droppedAfter": 62,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "per-action",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 1062,
+   "requestsLost": 62
+  }
+ },
+ {
+  "q": 0.1,
+  "mode": "none",
+  "N": 1000,
+  "rows": 1109,
+  "duplicates": 109,
+  "extraPct": 10.9,
+  "theoryRows": 1111.1,
+  "proxy": {
+   "requests": 1109,
+   "droppedBefore": 0,
+   "droppedAfter": 109,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "none",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 1109,
+   "requestsLost": 109
+  }
+ },
+ {
+  "q": 0.1,
+  "mode": "per-attempt",
+  "N": 1000,
+  "rows": 1115,
+  "duplicates": 115,
+  "extraPct": 11.5,
+  "theoryRows": 1111.1,
+  "proxy": {
+   "requests": 1115,
+   "droppedBefore": 0,
+   "droppedAfter": 115,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "per-attempt",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 1115,
+   "requestsLost": 115
+  }
+ },
+ {
+  "q": 0.1,
+  "mode": "per-action",
+  "N": 1000,
+  "rows": 1000,
+  "duplicates": 0,
+  "extraPct": 0,
+  "theoryRows": 1000,
+  "proxy": {
+   "requests": 1115,
+   "droppedBefore": 0,
+   "droppedAfter": 115,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "per-action",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 1115,
+   "requestsLost": 115
+  }
+ },
+ {
+  "q": 0.2,
+  "mode": "none",
+  "N": 1000,
+  "rows": 1270,
+  "duplicates": 270,
+  "extraPct": 27,
+  "theoryRows": 1250,
+  "proxy": {
+   "requests": 1270,
+   "droppedBefore": 0,
+   "droppedAfter": 270,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "none",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 1270,
+   "requestsLost": 270
+  }
+ },
+ {
+  "q": 0.2,
+  "mode": "per-attempt",
+  "N": 1000,
+  "rows": 1250,
+  "duplicates": 250,
+  "extraPct": 25,
+  "theoryRows": 1250,
+  "proxy": {
+   "requests": 1250,
+   "droppedBefore": 0,
+   "droppedAfter": 250,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "per-attempt",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 1250,
+   "requestsLost": 250
+  }
+ },
+ {
+  "q": 0.2,
+  "mode": "per-action",
+  "N": 1000,
+  "rows": 1000,
+  "duplicates": 0,
+  "extraPct": 0,
+  "theoryRows": 1000,
+  "proxy": {
+   "requests": 1271,
+   "droppedBefore": 0,
+   "droppedAfter": 271,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "per-action",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 1271,
+   "requestsLost": 271
+  }
+ },
+ {
+  "q": 0.3,
+  "mode": "none",
+  "N": 1000,
+  "rows": 1446,
+  "duplicates": 446,
+  "extraPct": 44.6,
+  "theoryRows": 1428.6,
+  "proxy": {
+   "requests": 1446,
+   "droppedBefore": 0,
+   "droppedAfter": 446,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "none",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 1446,
+   "requestsLost": 446
+  }
+ },
+ {
+  "q": 0.3,
+  "mode": "per-attempt",
+  "N": 1000,
+  "rows": 1403,
+  "duplicates": 403,
+  "extraPct": 40.3,
+  "theoryRows": 1428.6,
+  "proxy": {
+   "requests": 1403,
+   "droppedBefore": 0,
+   "droppedAfter": 403,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "per-attempt",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 1403,
+   "requestsLost": 403
+  }
+ },
+ {
+  "q": 0.3,
+  "mode": "per-action",
+  "N": 1000,
+  "rows": 1000,
+  "duplicates": 0,
+  "extraPct": 0,
+  "theoryRows": 1000,
+  "proxy": {
+   "requests": 1430,
+   "droppedBefore": 0,
+   "droppedAfter": 430,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "per-action",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 1430,
+   "requestsLost": 430
+  }
+ },
+ {
+  "q": 0.5,
+  "mode": "none",
+  "N": 1000,
+  "rows": 2048,
+  "duplicates": 1048,
+  "extraPct": 104.8,
+  "theoryRows": 1998,
+  "proxy": {
+   "requests": 2048,
+   "droppedBefore": 0,
+   "droppedAfter": 1048,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "none",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 2048,
+   "requestsLost": 1048
+  }
+ },
+ {
+  "q": 0.5,
+  "mode": "per-attempt",
+  "N": 1000,
+  "rows": 2066,
+  "duplicates": 1066,
+  "extraPct": 106.6,
+  "theoryRows": 1998,
+  "proxy": {
+   "requests": 2066,
+   "droppedBefore": 0,
+   "droppedAfter": 1066,
+   "passed": 1000
+  },
+  "client": {
+   "mode": "per-attempt",
+   "n": 1000,
+   "confirmed": 1000,
+   "requestsSent": 2066,
+   "requestsLost": 1066
+  }
+ },
+ {
+  "q": 0.5,
+  "mode": "per-action",
+  "N": 1000,
+  "rows": 1000,
+  "duplicates": 0,
+  "extraPct": 0,
+  "theoryRows": 1000,
+  "proxy": {
+   "requests": 2032,
+   "droppedBefore": 0,
+   "droppedAfter": 1034,
+   "passed": 998
+  },
+  "client": {
+   "mode": "per-action",
+   "n": 1000,
+   "confirmed": 998,
+   "requestsSent": 2032,
+   "requestsLost": 1034
+  }
+ }
+]

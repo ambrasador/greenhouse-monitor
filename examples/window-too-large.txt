@@ -1,0 +1,7 @@
+GET /api/v1/telemetry?device=gh1-s01&metric=temperature&from=2024-01-01T00:00:00Z&to=2026-01-01T00:00:00Z&agg=avg&interval=1d
+
+HTTP 400
+Content-Type: application/problem+json; charset=utf-8
+
+{"type": "https://greenhouse.example/problems/window-too-large", "title": "Вікно містить забагато вимірювань: звузьте його",
+ "status": 400, "estimated_rows": 1052640, "max_rows": 500000}

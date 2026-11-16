@@ -1,0 +1,18 @@
+retry: 4200
+
+event: ready
+data: {}
+
+id: 2026-11-04T03:52:47.000Z
+event: telemetry
+data: {"device":"gh1-s01","metric":"temperature",\
+       "ts":"2026-11-04T03:52:47.000Z","value":21.4}
+
+id: 2026-11-04T03:52:47.000Z
+event: telemetry
+data: {"device":"gh1-s01","metric":"humidity",\
+       "ts":"2026-11-04T03:52:47.000Z","value":55.1}
+
+event: hb
+data: {}
+

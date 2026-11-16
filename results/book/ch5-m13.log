@@ -1,0 +1,22 @@
+ε = 0,5 + RTT/2 = 1.0 с при RTT = 1.0 с
+Домен                           T       3T  крок  лаг,%  ε/3T,%  за добу     k A (сим.)    вікно    N         2000·T       1000·T
+Теплиця                        60     3 хв    10   5.56    0.56     1440   3.2     1.92    1 год   60   33 год 20 хв 16 год 40 хв
+Розумний будинок              300    15 хв    50   5.56    0.11      288   2.7     2.04    6 год   72  166 год 40 хв 83 год 20 хв
+Облік комунальних послуг      900    45 хв   150   5.56    0.04       96  2.31     1.99   24 год   96        500 год      250 год
+Транспортний парк               5     15 с     1   6.67    6.67    17280  3.86      2.0    15 хв  180 2 год 46 хв 40 с 1 год 23 хв 20 с
+Інфраструктура громади        300    15 хв    50   5.56    0.11      288   2.7     2.04    6 год   72  166 год 40 хв 83 год 20 хв
+greenhouse_temperature_window_s = 21600
+greenhouse_temperature_points = 360
+utilities_month_points = 2880
+utilities_month_over_cap = 880
+utilities_max_days = 20.833333333333332
+utilities_daily_buckets = 30
+utilities_hourly_buckets = 720
+smart_pause_fri18_mon09_h = 63
+smart_pause_events = 756
+fleet_speed_ms = 25.0
+fleet_stale_m = 375.0
+fleet_offline_5min_km = 7.5
+fleet_watchdog_recovery_s = [43, 46]
+phone_pause_3h_events_greenhouse = 180
+eps_s = 1.0

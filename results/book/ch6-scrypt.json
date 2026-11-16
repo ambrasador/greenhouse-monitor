@@ -1,0 +1,102 @@
+{
+  "node": "v22.23.4",
+  "rows": [
+    {
+      "name": "scrypt",
+      "N": 131072,
+      "r": 8,
+      "p": 1,
+      "ms": {
+        "median": 368.49802,
+        "min": 346.508849,
+        "max": 386.326956
+      },
+      "parallelPerSec": 4.9511856050873515,
+      "peakRssDeltaMiB": 512.1953125,
+      "memMiB": 128
+    },
+    {
+      "name": "scrypt",
+      "N": 65536,
+      "r": 8,
+      "p": 2,
+      "ms": {
+        "median": 332.461104,
+        "min": 322.112021,
+        "max": 357.532601
+      },
+      "parallelPerSec": 5.937372965498758,
+      "peakRssDeltaMiB": 256.27734375,
+      "memMiB": 64
+    },
+    {
+      "name": "scrypt",
+      "N": 32768,
+      "r": 8,
+      "p": 3,
+      "ms": {
+        "median": 222.769682,
+        "min": 213.963468,
+        "max": 257.401138
+      },
+      "parallelPerSec": 8.137745303634963,
+      "peakRssDeltaMiB": 96.25,
+      "memMiB": 32
+    },
+    {
+      "name": "scrypt",
+      "N": 16384,
+      "r": 8,
+      "p": 5,
+      "ms": {
+        "median": 180.690563,
+        "min": 170.218788,
+        "max": 190.482623
+      },
+      "parallelPerSec": 10.891986727242815,
+      "peakRssDeltaMiB": 48,
+      "memMiB": 16
+    },
+    {
+      "name": "scrypt",
+      "N": 8192,
+      "r": 8,
+      "p": 10,
+      "ms": {
+        "median": 169.776789,
+        "min": 166.91665,
+        "max": 176.962039
+      },
+      "parallelPerSec": 12.091877373272773,
+      "peakRssDeltaMiB": 24.375,
+      "memMiB": 8
+    },
+    {
+      "name": "scrypt",
+      "N": 1024,
+      "r": 8,
+      "p": 1,
+      "note": "стенд тестів",
+      "ms": {
+        "median": 2.360488,
+        "min": 2.214899,
+        "max": 2.934884
+      },
+      "parallelPerSec": 487.0935136131373,
+      "peakRssDeltaMiB": 3.25,
+      "memMiB": 1
+    },
+    {
+      "name": "pbkdf2-sha256",
+      "iterations": 600000,
+      "ms": {
+        "median": 90.926094,
+        "min": 88.178023,
+        "max": 116.610552
+      },
+      "parallelPerSec": 22.412406871931946,
+      "peakRssDeltaMiB": 0.125,
+      "memMiB": 0
+    }
+  ]
+}

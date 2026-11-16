@@ -1,0 +1,863 @@
+openapi: 3.2.0
+info:
+  title: Greenhouse Monitor API
+  version: 1.0.0
+  license: { name: MIT, identifier: MIT }
+servers:
+  - url: /api/v1
+security:
+  - bearerAuth: []
+paths:
+  /devices:
+    get:
+      operationId: listDevices
+      summary: Список пристроїв
+      x-allowed-roles: [viewer, operator, admin]
+      parameters:
+        - $ref: '#/components/parameters/Zone'
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Cursor'
+      responses:
+        '200':
+          description: Сторінка пристроїв
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/DevicePage' }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /devices/{id}:
+    get:
+      operationId: getDevice
+      summary: Пристрій і його останні значення
+      x-allowed-roles: [viewer, operator, admin]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Пристрій
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/DeviceDetail' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /devices/{id}/latest:
+    get:
+      operationId: getDeviceLatest
+      summary: Останні значення пристрою
+      x-allowed-roles: [viewer, operator, admin]
+      description: >-
+        Застарілий маршрут розділу 1; замінено полем latest
+        у GET /devices/{id}.
+      deprecated: true
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Останні значення
+          headers:
+            Deprecation: { schema: { type: string, examples: ['@1793664000'] } }
+            Sunset:
+              schema:
+                type: string
+                examples: ['Mon, 03 May 2027 00:00:00 GMT']
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/LatestReading' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /devices/{id}/stream:
+    get:
+      operationId: streamDevice
+      summary: Потік вимірювань пристрою (Server-Sent Events)
+      x-allowed-roles: [viewer, operator, admin]
+      security: [{ bearerAuth: [] }, { streamTicket: [] }]
+      description: >-
+        Відповідь не завершується. Події telemetry несуть вимірювання,
+        ready підтверджує підписку, hb — пульс, reset повідомляє, що
+        прогалина довша за буфер повтору і вікно треба перечитати через
+        GET /telemetry. Заголовок Last-Event-ID повертає події, починаючи
+        з указаного ts включно.
+      parameters:
+        - $ref: '#/components/parameters/Id'
+        - name: metrics
+          in: query
+          description: Метрики через кому; за замовчуванням усі
+          schema: { type: string, examples: ['temperature,humidity'] }
+        - name: Last-Event-ID
+          in: header
+          description: ts останньої події, яку отримав клієнт
+          schema: { type: string, format: date-time }
+      responses:
+        '200':
+          description: Потік подій
+          content:
+            text/event-stream:
+              schema: { type: string }
+              itemSchema: { $ref: '#/components/schemas/StreamEvent' }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /telemetry:
+    get:
+      operationId: getTelemetry
+      summary: Історія вимірювань або її агрегати
+      x-allowed-roles: [viewer, operator, admin]
+      description: >-
+        Без agg — сирі точки зі сторінками за курсором;
+        з agg і interval — агрегати.
+      parameters:
+        - $ref: '#/components/parameters/Device'
+        - $ref: '#/components/parameters/Metric'
+        - $ref: '#/components/parameters/From'
+        - $ref: '#/components/parameters/To'
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Cursor'
+        - $ref: '#/components/parameters/Order'
+        - $ref: '#/components/parameters/Agg'
+        - $ref: '#/components/parameters/Interval'
+        - $ref: '#/components/parameters/Tz'
+        - $ref: '#/components/parameters/Fill'
+      responses:
+        '200':
+          description: Сирі точки або агрегати
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - { $ref: '#/components/schemas/RawPage' }
+                  - { $ref: '#/components/schemas/AggResult' }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /alerts:
+    get:
+      operationId: getAlerts
+      summary: Періоди порушення порога
+      x-allowed-roles: [viewer, operator, admin]
+      parameters:
+        - $ref: '#/components/parameters/Device'
+        - $ref: '#/components/parameters/Metric'
+        - $ref: '#/components/parameters/Op'
+        - $ref: '#/components/parameters/Threshold'
+        - $ref: '#/components/parameters/From'
+        - $ref: '#/components/parameters/To'
+        - $ref: '#/components/parameters/Hysteresis'
+        - $ref: '#/components/parameters/MinDuration'
+        - $ref: '#/components/parameters/MaxGap'
+      responses:
+        '200':
+          description: Періоди порушення
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                additionalProperties: false
+                properties:
+                  data:
+                    type: array
+                    items: { $ref: '#/components/schemas/Violation' }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /ingest/webhook:
+    post:
+      operationId: ingestWebhook
+      summary: Пакет подій від платформи
+      x-allowed-roles: []
+      security: [{ webhookSignature: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/WebhookBatch' }
+      responses:
+        '200':
+          description: Пакет оброблено; 2xx означає, що повтор не потрібен
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/WebhookResult' }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '413': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /devices/{id}/commands:
+    post:
+      operationId: createCommand
+      summary: Поставити команду пристрою
+      x-allowed-roles: [operator, admin]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/CommandRequest' }
+      responses:
+        '202':
+          description: Команду прийнято; стан читають за Location
+          headers:
+            Location: { schema: { type: string } }
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Command' }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/Problem' }
+        '422': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /commands/{id}:
+    get:
+      operationId: getCommand
+      summary: Стан команди
+      x-allowed-roles: [operator, admin]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Команда
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Command' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /devices/{id}/settings:
+    get:
+      operationId: getSettings
+      summary: Налаштування пристрою
+      x-allowed-roles: [viewer, operator, admin]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: >-
+            Поточні налаштування; ETag — їхня версія
+            (0, якщо їх ще не зберігали)
+          headers:
+            ETag: { schema: { type: string, examples: ['"7"'] } }
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Settings' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+    put:
+      operationId: putSettings
+      summary: Замінити налаштування пристрою
+      x-allowed-roles: [operator, admin]
+      description: >-
+        Потрібен If-Match із версією, яку клієнт прочитав перед редагуванням.
+        412 повертає поточний стан у полях current і current_etag.
+      parameters:
+        - $ref: '#/components/parameters/Id'
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Settings' }
+      responses:
+        '200':
+          description: Налаштування збережено; новий ETag у заголовку
+          headers:
+            ETag: { schema: { type: string } }
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Settings' }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/Problem' }
+        '412': { $ref: '#/components/responses/Problem' }
+        '413': { $ref: '#/components/responses/Problem' }
+        '428': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /auth/login:
+    post:
+      operationId: login
+      summary: Вхід за іменем і паролем
+      description: >-
+        Відповідь за формою RFC 6749, 5.1 і з Cache-Control: no-store. Хибний пароль,
+        невідоме ім'я й вимкнений запис дають однакову 401. Спроби обмежено
+        за IP і за іменем (429 з Retry-After).
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Credentials' }
+      responses:
+        '200': { $ref: '#/components/responses/Tokens' }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '413': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /auth/refresh:
+    post:
+      operationId: refreshTokens
+      summary: Обміняти refresh-токен на нову пару
+      description: >-
+        Refresh-токен одноразовий. Повторне пред'явлення старого токена
+        (поза допуском у 10 с) анулює всю родину, і потрібен новий вхід.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RefreshRequest' }
+      responses:
+        '200': { $ref: '#/components/responses/Tokens' }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '413': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /auth/logout:
+    post:
+      operationId: logout
+      summary: Завершити сеанс
+      description: >-
+        Завжди 204: відповідь не підказує, чи був токен справжнім.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RefreshRequest' }
+      responses:
+        '204': { description: Родину refresh-токенів анульовано }
+        '400': { $ref: '#/components/responses/Problem' }
+        '413': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /auth/me:
+    get:
+      operationId: getMe
+      summary: Поточний користувач
+      x-allowed-roles: [viewer, operator, admin]
+      responses:
+        '200':
+          description: Дозволений список полів, а не рядок таблиці
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Me' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /devices/{id}/stream-ticket:
+    post:
+      operationId: createStreamTicket
+      summary: Квиток для відкриття потоку
+      description: >-
+        EventSource не вміє задавати заголовки, тож потік відкривають за
+        ?ticket=. Квиток живе 30 с, прив'язаний до пристрою й не годиться
+        як токен доступу.
+      x-allowed-roles: [viewer, operator, admin]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Квиток
+          headers:
+            Cache-Control: { schema: { type: string, const: no-store } }
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Ticket' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '404': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /audit:
+    get:
+      operationId: listAudit
+      summary: Журнал аудиту
+      x-allowed-roles: [admin]
+      parameters:
+        - name: limit
+          in: query
+          schema: { type: integer, minimum: 1, maximum: 500, default: 100 }
+        - name: before
+          in: query
+          description: Показати записи з id менше за вказаний (курсор next)
+          schema: { type: integer, minimum: 0 }
+        - name: actor
+          in: query
+          description: Лише дії цього користувача
+          schema: { type: string, maxLength: 64 }
+      responses:
+        '200':
+          description: Сторінка записів, найновіші першими
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AuditPage' }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /push-tokens:
+    post:
+      operationId: registerPushToken
+      summary: Зареєструвати адресу push цього пристрою
+      description: >-
+        Власник береться з токена доступу. Адресу, що належала іншому
+        користувачеві, перебирає собі той, хто увійшов на цьому телефоні.
+      x-allowed-roles: [viewer, operator, admin]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/PushRegistration' }
+      responses:
+        '204': { description: Адресу збережено }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '413': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /push-tokens/{token}:
+    delete:
+      operationId: deletePushToken
+      summary: Видалити власну адресу push
+      description: >-
+        Чужу адресу тихо ігнорують: відповідь 204 не розкриває, чи вона існує.
+      x-allowed-roles: [viewer, operator, admin]
+      parameters:
+        - name: token
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '204': { description: Адреси користувача більше немає }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '429': { $ref: '#/components/responses/Problem' }
+  /devices/{id}/claim:
+    post:
+      operationId: claimDevice
+      summary: Прив'язати пристрій до облікового запису
+      description: >-
+        Потрібен код з корпусу пристрою. Чужий, неіснуючий і вже прив'язаний
+        пристрій дають однакову 403; код перевіряється до будь-яких
+        відповідей про стан пристрою. Спроби обмежено за користувачем.
+      x-allowed-roles: [operator, admin]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ClaimRequest' }
+      responses:
+        '200':
+          description: Пристрій уже прив'язано цим користувачем
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ClaimResult' }
+        '201':
+          description: Прив'язано; код погашено, область доступу розширено
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ClaimResult' }
+        '400': { $ref: '#/components/responses/Problem' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { $ref: '#/components/responses/Problem' }
+        '409': { $ref: '#/components/responses/Problem' }
+        '413': { $ref: '#/components/responses/Problem' }
+        '429': { $ref: '#/components/responses/Problem' }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: >-
+        Токен доступу з POST /auth/login: HS256, typ at+jwt, 15 хвилин.
+        Квиток потоку цією схемою не приймається.
+    webhookSignature:
+      type: apiKey
+      in: header
+      name: X-Signature
+      description: >-
+        t=<unix-секунди>,v1=<hex>: HMAC-SHA256 від рядка "<t>.<сире тіло>".
+        Кілька v1 дозволено на час перевипуску секрету; допуск за часом ±300 с.
+    streamTicket:
+      type: apiKey
+      in: query
+      name: ticket
+      description: Квиток з POST /devices/{id}/stream-ticket; живе 30 с, прив'язаний до пристрою.
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema: { type: string }
+    Zone:
+      name: zone
+      in: query
+      schema: { type: string }
+    Limit:
+      name: limit
+      in: query
+      schema: { type: integer, minimum: 1, maximum: 1000, default: 500 }
+    Cursor:
+      name: cursor
+      in: query
+      description: Непрозорий курсор з поля next попередньої відповіді
+      schema: { type: string }
+    Device:
+      name: device
+      in: query
+      required: true
+      schema: { type: string }
+    Metric:
+      name: metric
+      in: query
+      required: true
+      schema: { type: string }
+    From:
+      name: from
+      in: query
+      required: true
+      description: Початок вікна (включно), UTC
+      schema: { type: string, format: date-time }
+    To:
+      name: to
+      in: query
+      required: true
+      description: Кінець вікна (виключно), UTC
+      schema: { type: string, format: date-time }
+    Order:
+      name: order
+      in: query
+      schema: { type: string, enum: [asc, desc], default: asc }
+    Agg:
+      name: agg
+      in: query
+      description: Список агрегатів; допустимі залежать від виду метрики
+      schema: { type: string, examples: ['avg,max'] }
+    Interval:
+      name: interval
+      in: query
+      description: Довжина інтервалу; 1d і 1mo — календарні, у зоні tz
+      schema: { type: string, examples: ['15m', '1h', '1d', '1mo'] }
+    Tz:
+      name: tz
+      in: query
+      description: Зона IANA для календарних інтервалів
+      schema: { type: string, default: UTC }
+    Fill:
+      name: fill
+      in: query
+      description: Що робити з порожніми інтервалами
+      schema: { type: string, enum: [none, 'null'], default: none }
+    Op:
+      name: op
+      in: query
+      required: true
+      description: lt — нижче порога, gt — вище
+      schema: { type: string, enum: [lt, gt] }
+    Threshold:
+      name: threshold
+      in: query
+      required: true
+      schema: { type: number }
+    Hysteresis:
+      name: hysteresis
+      in: query
+      description: Зворотний зсув порога, за якого період закривається
+      schema: { type: number, minimum: 0, default: 0 }
+    MinDuration:
+      name: min_duration
+      in: query
+      description: Мінімальна тривалість періоду, с
+      schema: { type: integer, minimum: 0, default: 0 }
+    MaxGap:
+      name: max_gap
+      in: query
+      description: Розрив між точками, після якого період закривається, с
+      schema: { type: integer, minimum: 1 }
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      schema: { type: string, pattern: '^[\w-]{8,64}$' }
+    IfMatch:
+      name: If-Match
+      in: header
+      description: ETag, отриманий у GET; для нового запису — "0"
+      schema: { type: string, examples: ['"7"'] }
+  responses:
+    Problem:
+      description: Помилка у форматі RFC 9457
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/Problem' }
+    Unauthorized:
+      description: Немає чинного токена
+      headers:
+        WWW-Authenticate:
+          description: Виклик за RFC 6750, 3; error="invalid_token" лише коли токен було надіслано
+          schema: { type: string, examples: ['Bearer realm="greenhouse-api", error="invalid_token"'] }
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/Problem' }
+    Forbidden:
+      description: Роль не дозволяє цієї дії (або хибний код прив'язки)
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/Problem' }
+    Tokens:
+      description: Нова пара токенів
+      headers:
+        Cache-Control: { schema: { type: string, const: no-store } }
+        Pragma: { schema: { type: string, const: no-cache } }
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/TokenResponse' }
+  schemas:
+    Problem:
+      type: object
+      required: [type, title, status]
+      properties:
+        type: { type: string }
+        title: { type: string }
+        status: { type: integer }
+        errors:
+          type: array
+          items:
+            type: object
+            required: [param, message]
+            properties: { param: { type: string }, message: { type: string } }
+    Settings:
+      type: object
+      additionalProperties: false
+      properties:
+        soil_moisture_min: { type: integer, minimum: 0, maximum: 100 }
+        temperature_min: { type: number, minimum: 0, maximum: 40 }
+    Cursor: { type: [string, 'null'] }
+    Point:
+      type: object
+      required: [ts, value]
+      additionalProperties: false
+      properties:
+        ts: { type: string, format: date-time }
+        value: { type: number }
+    RawPage:
+      type: object
+      required: [data, next]
+      additionalProperties: false
+      properties:
+        data: { type: array, items: { $ref: '#/components/schemas/Point' } }
+        next: { $ref: '#/components/schemas/Cursor' }
+    Bucket:
+      type: object
+      required: [start, count]
+      properties:
+        start: { type: string, format: date-time }
+        count: { type: integer, minimum: 0 }
+        avg: { type: [number, 'null'] }
+        min: { type: [number, 'null'] }
+        max: { type: [number, 'null'] }
+        sum: { type: [number, 'null'] }
+        delta: { type: [number, 'null'] }
+    AggResult:
+      type: object
+      required: [data, interval, tz]
+      additionalProperties: false
+      properties:
+        data: { type: array, items: { $ref: '#/components/schemas/Bucket' } }
+        interval: { type: string }
+        tz: { type: string }
+    Device:
+      type: object
+      required: [id, name, zone, created_at, last_seen]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        zone: { type: [string, 'null'] }
+        created_at: { type: string, format: date-time }
+        last_seen: { type: [string, 'null'], format: date-time }
+    DevicePage:
+      type: object
+      required: [data, next]
+      properties:
+        data: { type: array, items: { $ref: '#/components/schemas/Device' } }
+        next: { $ref: '#/components/schemas/Cursor' }
+    DeviceDetail:
+      type: object
+      required: [id, name, zone, created_at, latest]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        zone: { type: [string, 'null'] }
+        created_at: { type: string, format: date-time }
+        latest:
+          type: array
+          items: { $ref: '#/components/schemas/LatestReading' }
+    LatestReading:
+      type: object
+      required: [metric, ts, value]
+      properties:
+        metric: { type: string }
+        ts: { type: string, format: date-time }
+        value: { type: number }
+        unit: { type: string }
+    StreamEvent:
+      type: object
+      required: [event]
+      properties:
+        event: { type: string, enum: [telemetry, ready, hb, reset] }
+        id: { type: string, format: date-time }
+        retry: { type: integer, minimum: 0 }
+        data:
+          type: string
+          contentMediaType: application/json
+          contentSchema: { $ref: '#/components/schemas/StreamReading' }
+    StreamReading:
+      type: object
+      required: [device, metric, ts, value]
+      properties:
+        device: { type: string }
+        metric: { type: string }
+        ts: { type: string, format: date-time }
+        value: { type: number }
+    Violation:
+      type: object
+      required: [start, end, duration_sec, extreme, samples, ended_by, open]
+      properties:
+        start: { type: string, format: date-time }
+        end: { type: string, format: date-time }
+        duration_sec: { type: number, minimum: 0 }
+        extreme: { type: number }
+        samples: { type: integer, minimum: 1 }
+        ended_by: { type: string, enum: [recovered, gap, window_end] }
+        open: { type: boolean }
+    WebhookEvent:
+      type: object
+      required: [device_id, metric, value, ts]
+      properties:
+        device_id: { type: string }
+        metric: { type: string }
+        value: { type: number }
+        ts: { type: string, format: date-time }
+    WebhookBatch:
+      type: object
+      required: [events]
+      properties:
+        events:
+          type: array
+          minItems: 1
+          maxItems: 500
+          items: { $ref: '#/components/schemas/WebhookEvent' }
+    WebhookResult:
+      type: object
+      required: [stored, duplicate, rejected]
+      properties:
+        stored: { type: integer, minimum: 0 }
+        duplicate: { type: integer, minimum: 0 }
+        rejected: { type: integer, minimum: 0 }
+    CommandRequest:
+      type: object
+      required: [name, params]
+      properties:
+        name: { type: string, enum: [irrigate, set_setpoint] }
+        params: { type: object }
+    Command:
+      type: object
+      required: [id, device_id, name, params, status,
+                 created_at, updated_at, expires_at]
+      properties:
+        id: { type: string, format: uuid }
+        device_id: { type: string }
+        name: { type: string }
+        params: { type: object }
+        status: { type: string, enum: [pending, sent, acked, failed, expired] }
+        created_at: { type: string, format: date-time }
+        updated_at: { type: string, format: date-time }
+        expires_at: { type: string, format: date-time }
+    Credentials:
+      type: object
+      required: [username, password]
+      additionalProperties: false
+      properties:
+        username: { type: string, minLength: 1, maxLength: 64 }
+        password: { type: string, minLength: 1, maxLength: 256 }
+    RefreshRequest:
+      type: object
+      required: [refresh_token]
+      properties:
+        refresh_token: { type: string, minLength: 16, maxLength: 128 }
+    TokenResponse:
+      type: object
+      required: [token_type, access_token, expires_in, refresh_token]
+      additionalProperties: false
+      properties:
+        token_type: { type: string, const: Bearer }
+        access_token: { type: string }
+        expires_in: { type: integer, description: Секунд до закінчення токена доступу }
+        refresh_token: { type: string }
+    Me:
+      type: object
+      required: [id, username, role, scopes]
+      additionalProperties: false
+      properties:
+        id: { type: string }
+        username: { type: string }
+        role: { type: string, enum: [viewer, operator, admin] }
+        scopes:
+          type: array
+          items: { type: string, examples: ['*', 'zone:north', 'device:gh1-s01'] }
+    Ticket:
+      type: object
+      required: [ticket, expires_in]
+      additionalProperties: false
+      properties:
+        ticket: { type: string }
+        expires_in: { type: integer }
+    AuditEntry:
+      type: object
+      required: [id, ts, actor, action, target, outcome, ip, detail]
+      properties:
+        id: { type: integer }
+        ts: { type: string, format: date-time }
+        actor: { type: [string, 'null'] }
+        action: { type: string }
+        target: { type: [string, 'null'] }
+        outcome: { type: string, enum: [ok, fail, denied, rejected] }
+        ip: { type: [string, 'null'] }
+        detail: { type: [object, 'null'] }
+    AuditPage:
+      type: object
+      required: [data, next]
+      additionalProperties: false
+      properties:
+        data: { type: array, items: { $ref: '#/components/schemas/AuditEntry' } }
+        next: { type: [integer, 'null'] }
+    PushRegistration:
+      type: object
+      required: [platform]
+      properties:
+        token: { type: string, description: Реєстраційний токен FCM (SDK до 16-ї версії) }
+        fid: { type: string, description: Firebase Installation ID (SDK від 17-ї версії) }
+        platform: { type: string, enum: [android, ios] }
+      oneOf:
+        - required: [token]
+        - required: [fid]
+    ClaimRequest:
+      type: object
+      required: [code]
+      properties:
+        code: { type: string, examples: ['K7QM-2XWD-9PBA-4FHT'] }
+    ClaimResult:
+      type: object
+      required: [device, owner]
+      additionalProperties: false
+      properties:
+        device: { type: string }
+        owner: { type: string }

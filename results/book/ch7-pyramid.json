@@ -1,0 +1,540 @@
+{
+ "host": "Xeon 2.1 GHz, sha_ni, 2 vCPU, Node v22.23.4",
+ "startupMs": 29,
+ "sum": {
+  "integration-db": {
+   "files": 10,
+   "tests": 54,
+   "wallMs": 3875
+  },
+  "unit": {
+   "files": 21,
+   "tests": 121,
+   "wallMs": 3216
+  },
+  "integration-net": {
+   "files": 16,
+   "tests": 170,
+   "wallMs": 17208
+  }
+ },
+ "rows": [
+  {
+   "file": "admin-cli.test.js",
+   "level": "integration-db",
+   "net": false,
+   "db": true,
+   "tests": 4,
+   "pass": 4,
+   "fail": 0,
+   "wallMs": 1500,
+   "status": 0
+  },
+  {
+   "file": "aggregate.test.js",
+   "level": "integration-db",
+   "net": false,
+   "db": true,
+   "tests": 5,
+   "pass": 5,
+   "fail": 0,
+   "wallMs": 185,
+   "status": 0
+  },
+  {
+   "file": "alerts.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 6,
+   "pass": 6,
+   "fail": 0,
+   "wallMs": 101,
+   "status": 0
+  },
+  {
+   "file": "api.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 15,
+   "pass": 15,
+   "fail": 0,
+   "wallMs": 693,
+   "status": 0
+  },
+  {
+   "file": "auth.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 14,
+   "pass": 14,
+   "fail": 0,
+   "wallMs": 2496,
+   "status": 0
+  },
+  {
+   "file": "authz.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 11,
+   "pass": 11,
+   "fail": 0,
+   "wallMs": 867,
+   "status": 0
+  },
+  {
+   "file": "claim-codes.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 6,
+   "pass": 6,
+   "fail": 0,
+   "wallMs": 605,
+   "status": 0
+  },
+  {
+   "file": "client/axes.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 7,
+   "pass": 7,
+   "fail": 0,
+   "wallMs": 128,
+   "status": 0
+  },
+  {
+   "file": "client/backoff.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 2,
+   "pass": 2,
+   "fail": 0,
+   "wallMs": 108,
+   "status": 0
+  },
+  {
+   "file": "client/cards.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 3,
+   "pass": 3,
+   "fail": 0,
+   "wallMs": 121,
+   "status": 0
+  },
+  {
+   "file": "client/color.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 5,
+   "pass": 5,
+   "fail": 0,
+   "wallMs": 102,
+   "status": 0
+  },
+  {
+   "file": "client/csv.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 6,
+   "pass": 6,
+   "fail": 0,
+   "wallMs": 111,
+   "status": 0
+  },
+  {
+   "file": "client/downsample.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 10,
+   "pass": 10,
+   "fail": 0,
+   "wallMs": 243,
+   "status": 0
+  },
+  {
+   "file": "client/format.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 2,
+   "pass": 2,
+   "fail": 0,
+   "wallMs": 141,
+   "status": 0
+  },
+  {
+   "file": "client/history.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 14,
+   "pass": 14,
+   "fail": 0,
+   "wallMs": 120,
+   "status": 0
+  },
+  {
+   "file": "client/http.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 3,
+   "pass": 3,
+   "fail": 0,
+   "wallMs": 107,
+   "status": 0
+  },
+  {
+   "file": "client/intervals.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 5,
+   "pass": 5,
+   "fail": 0,
+   "wallMs": 114,
+   "status": 0
+  },
+  {
+   "file": "client/livefeed.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 8,
+   "pass": 8,
+   "fail": 0,
+   "wallMs": 137,
+   "status": 0
+  },
+  {
+   "file": "client/merge.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 10,
+   "pass": 10,
+   "fail": 0,
+   "wallMs": 130,
+   "status": 0
+  },
+  {
+   "file": "client/queries.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 4,
+   "pass": 4,
+   "fail": 0,
+   "wallMs": 120,
+   "status": 0
+  },
+  {
+   "file": "client/series.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 4,
+   "pass": 4,
+   "fail": 0,
+   "wallMs": 163,
+   "status": 0
+  },
+  {
+   "file": "client/session.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 17,
+   "pass": 17,
+   "fail": 0,
+   "wallMs": 1183,
+   "status": 0
+  },
+  {
+   "file": "client/status.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 7,
+   "pass": 7,
+   "fail": 0,
+   "wallMs": 107,
+   "status": 0
+  },
+  {
+   "file": "config.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 6,
+   "pass": 6,
+   "fail": 0,
+   "wallMs": 105,
+   "status": 0
+  },
+  {
+   "file": "contract.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 12,
+   "pass": 12,
+   "fail": 0,
+   "wallMs": 912,
+   "status": 0
+  },
+  {
+   "file": "e2e-mqtt.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 3,
+   "pass": 3,
+   "fail": 0,
+   "wallMs": 2531,
+   "status": 0
+  },
+  {
+   "file": "feed.test.js",
+   "level": "integration-db",
+   "net": false,
+   "db": true,
+   "tests": 8,
+   "pass": 8,
+   "fail": 0,
+   "wallMs": 459,
+   "status": 0
+  },
+  {
+   "file": "health.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 3,
+   "pass": 3,
+   "fail": 0,
+   "wallMs": 102,
+   "status": 0
+  },
+  {
+   "file": "ingest.test.js",
+   "level": "integration-db",
+   "net": false,
+   "db": true,
+   "tests": 4,
+   "pass": 4,
+   "fail": 0,
+   "wallMs": 187,
+   "status": 0
+  },
+  {
+   "file": "limit-user.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 4,
+   "pass": 4,
+   "fail": 0,
+   "wallMs": 466,
+   "status": 0
+  },
+  {
+   "file": "migrate.test.js",
+   "level": "integration-db",
+   "net": false,
+   "db": true,
+   "tests": 7,
+   "pass": 7,
+   "fail": 0,
+   "wallMs": 136,
+   "status": 0
+  },
+  {
+   "file": "mobile-api.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 6,
+   "pass": 6,
+   "fail": 0,
+   "wallMs": 340,
+   "status": 0
+  },
+  {
+   "file": "pagination.test.js",
+   "level": "integration-db",
+   "net": false,
+   "db": true,
+   "tests": 4,
+   "pass": 4,
+   "fail": 0,
+   "wallMs": 131,
+   "status": 0
+  },
+  {
+   "file": "passwords.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 7,
+   "pass": 7,
+   "fail": 0,
+   "wallMs": 703,
+   "status": 0
+  },
+  {
+   "file": "privacy.test.js",
+   "level": "integration-db",
+   "net": false,
+   "db": true,
+   "tests": 5,
+   "pass": 5,
+   "fail": 0,
+   "wallMs": 280,
+   "status": 0
+  },
+  {
+   "file": "push-session.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 7,
+   "pass": 7,
+   "fail": 0,
+   "wallMs": 547,
+   "status": 0
+  },
+  {
+   "file": "push.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 20,
+   "pass": 20,
+   "fail": 0,
+   "wallMs": 535,
+   "status": 0
+  },
+  {
+   "file": "ratelimit.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 4,
+   "pass": 4,
+   "fail": 0,
+   "wallMs": 111,
+   "status": 0
+  },
+  {
+   "file": "realtime.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 9,
+   "pass": 9,
+   "fail": 0,
+   "wallMs": 2124,
+   "status": 0
+  },
+  {
+   "file": "refresh.test.js",
+   "level": "integration-db",
+   "net": false,
+   "db": true,
+   "tests": 6,
+   "pass": 6,
+   "fail": 0,
+   "wallMs": 576,
+   "status": 0
+  },
+  {
+   "file": "settings.test.js",
+   "level": "integration-db",
+   "net": false,
+   "db": true,
+   "tests": 2,
+   "pass": 2,
+   "fail": 0,
+   "wallMs": 126,
+   "status": 0
+  },
+  {
+   "file": "sse.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 9,
+   "pass": 9,
+   "fail": 0,
+   "wallMs": 585,
+   "status": 0
+  },
+  {
+   "file": "stream-auth.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 17,
+   "pass": 17,
+   "fail": 0,
+   "wallMs": 2556,
+   "status": 0
+  },
+  {
+   "file": "timeq.test.js",
+   "level": "unit",
+   "net": false,
+   "db": false,
+   "tests": 5,
+   "pass": 5,
+   "fail": 0,
+   "wallMs": 142,
+   "status": 0
+  },
+  {
+   "file": "tokens.test.js",
+   "level": "integration-db",
+   "net": false,
+   "db": true,
+   "tests": 9,
+   "pass": 9,
+   "fail": 0,
+   "wallMs": 295,
+   "status": 0
+  },
+  {
+   "file": "webhook-sign.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": true,
+   "tests": 15,
+   "pass": 15,
+   "fail": 0,
+   "wallMs": 550,
+   "status": 0
+  },
+  {
+   "file": "ws-frame.test.js",
+   "level": "integration-net",
+   "net": true,
+   "db": false,
+   "tests": 5,
+   "pass": 5,
+   "fail": 0,
+   "wallMs": 218,
+   "status": 0
+  }
+ ]
+}

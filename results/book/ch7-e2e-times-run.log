@@ -1,0 +1,1 @@
+{"browser": {"runs": [14.1, 13.9, 13.8], "median": 13.9, "exitCodes": [0, 0, 0]}, "process": {"runs": [4.1, 4.4, 4.1], "median": 4.1, "exitCodes": [0, 0, 0]}, "jest": {"runs": [6.6, 6.7, 6.4], "median": 6.6, "exitCodes": [0, 0, 0]}}

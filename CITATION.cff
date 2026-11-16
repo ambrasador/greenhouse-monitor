@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Якщо ви використовуєте цей код, процитуйте його так."
+type: software
+title: "Greenhouse Monitor: код підручника «Технології розробки додатків для інтернету речей»"
+authors:
+  - family-names: "Комісаров"
+    given-names: "О. С."
+    affiliation: "Херсонський національний технічний університет"

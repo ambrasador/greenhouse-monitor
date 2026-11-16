@@ -1,0 +1,4 @@
+
+> greenhouse-monitor@1.0.0 build:client
+> node client/build.mjs --prod
+

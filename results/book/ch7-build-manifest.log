@@ -1,0 +1,155 @@
+--progress is a global compose flag, better use `docker compose --progress xx build ...
+ Image greenhouse-web:1.0 Building 
+ Image greenhouse-backend:1.0 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.21kB done
+#1 DONE 0.0s
+
+#2 [web internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.77kB done
+#2 DONE 0.0s
+
+#3 [backend internal] load metadata for docker.io/library/node:22.23.4-bookworm-slim
+#3 DONE 0.0s
+
+#4 [web internal] load .dockerignore
+#4 transferring context: 1.08kB done
+#4 DONE 0.0s
+
+#5 [web internal] load metadata for docker.io/library/nginx:1.30.6-alpine
+#5 DONE 0.0s
+
+#6 [backend internal] load build context
+#6 ...
+
+#7 [backend deps 1/4] FROM docker.io/library/node:22.23.4-bookworm-slim@sha256:3d41ab46456030df28bdad9b69290046e1eab2a5a89a31182c54a5d9aa344b52
+#7 resolve docker.io/library/node:22.23.4-bookworm-slim@sha256:3d41ab46456030df28bdad9b69290046e1eab2a5a89a31182c54a5d9aa344b52 0.0s done
+#7 DONE 0.0s
+
+#8 [web web 1/3] FROM docker.io/library/nginx:1.30.6-alpine@sha256:e9b2d7624fd7957f4ed44ae0a272d93fb73aeb8512ba8916f8118ae6143fd115
+#8 resolve docker.io/library/nginx:1.30.6-alpine@sha256:e9b2d7624fd7957f4ed44ae0a272d93fb73aeb8512ba8916f8118ae6143fd115 0.0s done
+#8 DONE 0.0s
+
+#9 [web internal] load build context
+#9 transferring context: 4.50kB 0.0s done
+#9 DONE 0.0s
+
+#10 [backend deps 2/4] WORKDIR /app
+#10 CACHED
+
+#11 [web client 3/6] COPY package.json package-lock.json ./
+#11 DONE 0.0s
+
+#6 [backend internal] load build context
+#6 transferring context: 4.37kB 0.3s done
+#6 DONE 0.3s
+
+#11 [backend client 3/6] COPY package.json package-lock.json ./
+#11 DONE 0.0s
+
+#12 [backend deps 3/4] COPY package.json package-lock.json ./
+#12 CACHED
+
+#13 [backend deps 4/4] RUN npm ci --omit=dev --ignore-scripts
+#13 3.931 npm warn deprecated prom-client@15.1.3: prom-client has been replaced by @prometheus-io/client
+#13 5.141 
+#13 5.141 added 164 packages, and audited 165 packages in 5s
+#13 5.142 
+#13 5.142 40 packages are looking for funding
+#13 5.143   run `npm fund` for details
+#13 5.145 
+#13 5.145 found 0 vulnerabilities
+#13 5.146 npm notice
+#13 5.146 npm notice New major version of npm available! 10.9.9 -> 12.2.2
+#13 5.146 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+#13 5.146 npm notice To update run: npm install -g npm@12.2.2
+#13 5.146 npm notice
+#13 DONE 5.4s
+
+#14 [web client 4/6] RUN npm ci --ignore-scripts
+#14 ...
+
+#15 [backend app 3/6] RUN mkdir /data && chown node:node /data
+#15 CACHED
+
+#16 [backend app 4/6] COPY --from=deps /app/node_modules ./node_modules
+#16 CACHED
+
+#17 [backend app 5/6] COPY *.js *.sql package.json ./
+#17 DONE 0.1s
+
+#18 [backend app 6/6] COPY migrations ./migrations
+#18 DONE 0.0s
+
+#14 [web client 4/6] RUN npm ci --ignore-scripts
+#14 ...
+
+#19 [backend] exporting to image
+#19 exporting layers 0.1s done
+#19 exporting manifest sha256:54c96ced2d94e6aa1e0a5dd6fe137704e53a52fb149c674e1e6cca733c7d2049 done
+#19 exporting config sha256:5fcf89e90e4d5e0bc8eaa7819d1493801679b76d0fe947f35d44c40a77aff61a done
+#19 exporting attestation manifest sha256:f24c93b3cadc3da86b68bcd7448e58fa398c9db1a669949ebda26c4609fe0186 done
+#19 exporting manifest list sha256:3cb95b1208b1e7f8331aa7dfd90ddcb82421ae6d6be78058a24272a8459ecead done
+#19 naming to docker.io/library/greenhouse-backend:1.0 done
+#19 unpacking to docker.io/library/greenhouse-backend:1.0 0.0s done
+#19 DONE 0.1s
+
+#20 [backend] resolving provenance for metadata file
+#20 DONE 0.0s
+
+#14 [web client 4/6] RUN npm ci --ignore-scripts
+#14 7.267 npm warn deprecated uuid@8.3.2: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+#14 7.293 npm warn deprecated prom-client@15.1.3: prom-client has been replaced by @prometheus-io/client
+#14 8.220 npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+#14 12.38 
+#14 12.38 added 629 packages, and audited 630 packages in 12s
+#14 12.38 
+#14 12.38 115 packages are looking for funding
+#14 12.38   run `npm fund` for details
+#14 12.43 
+#14 12.43 25 vulnerabilities (3 low, 22 moderate)
+#14 12.43 
+#14 12.43 To address issues that do not require attention, run:
+#14 12.43   npm audit fix
+#14 12.43 
+#14 12.43 To address all issues (including breaking changes), run:
+#14 12.43   npm audit fix --force
+#14 12.43 
+#14 12.43 Run `npm audit` for details.
+#14 12.43 npm notice
+#14 12.43 npm notice New major version of npm available! 10.9.9 -> 12.2.2
+#14 12.43 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+#14 12.43 npm notice To update run: npm install -g npm@12.2.2
+#14 12.43 npm notice
+#14 DONE 12.9s
+
+#21 [web client 5/6] COPY client ./client
+#21 DONE 0.2s
+
+#22 [web client 6/6] RUN npm run build:client
+#22 0.256 
+#22 0.256 > greenhouse-monitor@1.0.1 build:client
+#22 0.256 > node client/build.mjs --prod
+#22 0.256 
+#22 DONE 0.8s
+
+#23 [web web 2/3] COPY nginx.conf /etc/nginx/conf.d/default.conf
+#23 CACHED
+
+#24 [web web 3/3] COPY --from=client /app/client/dist /usr/share/nginx/html
+#24 CACHED
+
+#25 [web] exporting to image
+#25 exporting layers done
+#25 exporting manifest sha256:760e40af5e23d7a86dd421457f3b38194b519756ef0fd7bbc309e7f185693efb done
+#25 exporting config sha256:160af7ce7b6eb2fa1bd5c2f96893cb9d32e42fa4a4ce6c7f66714129324a1383 done
+#25 exporting attestation manifest sha256:45883003ff14bd659ebe03c56d4c28b794b7e351182850fb2a00add79c6ddebd done
+#25 exporting manifest list sha256:95494478f7002a45cca5400283cd0d9d7906db5378908198e06c956fc7785e73 done
+#25 naming to docker.io/library/greenhouse-web:1.0 done
+#25 unpacking to docker.io/library/greenhouse-web:1.0 done
+#25 DONE 0.1s
+
+#26 [web] resolving provenance for metadata file
+#26 DONE 0.0s
+ Image greenhouse-web:1.0 Built 
+ Image greenhouse-backend:1.0 Built 

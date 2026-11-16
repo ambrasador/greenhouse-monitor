@@ -1,0 +1,91 @@
+{
+ "host": "Intel(R) Xeon(R) Processor @ 2.10GHz, 2 vCPU, Node v22.23.4",
+ "baseline": {
+  "jestUnit": 0,
+  "jestIntegration": 0,
+  "nodeTest": 0
+ },
+ "mutants": [
+  {
+   "id": "m1",
+   "file": "push.js",
+   "what": "nextLevel: поріг порушення включено (< → <=)",
+   "jestUnitFailed": 2,
+   "jestUnitKilled": true,
+   "nodeTestFailed": 1,
+   "nodeTestKilled": true
+  },
+  {
+   "id": "m2",
+   "file": "push.js",
+   "what": "nextLevel: вихід із рівня строгий (>= → >)",
+   "jestUnitFailed": 2,
+   "jestUnitKilled": true,
+   "nodeTestFailed": 1,
+   "nodeTestKilled": true
+  },
+  {
+   "id": "m3",
+   "file": "push.js",
+   "what": "nextLevel: гістерезис вилучено",
+   "jestUnitFailed": 3,
+   "jestUnitKilled": true,
+   "nodeTestFailed": 2,
+   "nodeTestKilled": true
+  },
+  {
+   "id": "m4",
+   "file": "push.js",
+   "what": "nextLevel: критичний рівень не утримується гістерезисом",
+   "jestUnitFailed": 1,
+   "jestUnitKilled": true,
+   "nodeTestFailed": 1,
+   "nodeTestKilled": true
+  },
+  {
+   "id": "m5",
+   "file": "push.js",
+   "what": "nextLevel: із критичного відразу в нормальний",
+   "jestUnitFailed": 1,
+   "jestUnitKilled": true,
+   "nodeTestFailed": 1,
+   "nodeTestKilled": true
+  },
+  {
+   "id": "m6",
+   "file": "alerts.js",
+   "what": "findViolations: епізод рівно мінімальної тривалості відкидається (>= → >)",
+   "jestUnitFailed": 1,
+   "jestUnitKilled": true,
+   "nodeTestFailed": 0,
+   "nodeTestKilled": false
+  },
+  {
+   "id": "m7",
+   "file": "alerts.js",
+   "what": "findViolations: розрив рівно в межу закриває епізод (> → >=)",
+   "jestUnitFailed": 1,
+   "jestUnitKilled": true,
+   "nodeTestFailed": 0,
+   "nodeTestKilled": false
+  },
+  {
+   "id": "m8",
+   "file": "alerts.js",
+   "what": "findViolations: вихід із епізоду строгий (>= → >)",
+   "jestUnitFailed": 1,
+   "jestUnitKilled": true,
+   "nodeTestFailed": 0,
+   "nodeTestKilled": false
+  },
+  {
+   "id": "m9",
+   "file": "alerts.js",
+   "what": "findViolations: найгірше значення епізоду береться навпаки",
+   "jestUnitFailed": 1,
+   "jestUnitKilled": true,
+   "nodeTestFailed": 3,
+   "nodeTestKilled": true
+  }
+ ]
+}

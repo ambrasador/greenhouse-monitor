@@ -1,0 +1,72 @@
+{
+ "idle": [
+  {
+   "BlockIO": "0B / 0B",
+   "CPUPerc": "0.00%",
+   "Container": "a8d11fcd1fc4a0fb57c16f12b3ecb275d531daae252358240743c3cdffe0d351",
+   "ID": "a8d11fcd1fc4",
+   "MemPerc": "0.04%",
+   "MemUsage": "3.418MiB / 7.834GiB",
+   "Name": "greenhouse-web-1",
+   "NetIO": "42B / 126B",
+   "PIDs": "3"
+  },
+  {
+   "BlockIO": "0B / 0B",
+   "CPUPerc": "0.55%",
+   "Container": "0157773e4822d96b83612f62de68fcec6615259b5e6564c414192879da2aa50d",
+   "ID": "0157773e4822",
+   "MemPerc": "0.64%",
+   "MemUsage": "51.27MiB / 7.834GiB",
+   "Name": "greenhouse-backend-1",
+   "NetIO": "814B / 1.11kB",
+   "PIDs": "12"
+  },
+  {
+   "BlockIO": "0B / 0B",
+   "CPUPerc": "0.03%",
+   "Container": "ee6ac915bbf03eabbefd496edfd41f6f9d7beedd96bcf6de5ed70d862a252acb",
+   "ID": "ee6ac915bbf0",
+   "MemPerc": "0.04%",
+   "MemUsage": "2.988MiB / 7.834GiB",
+   "Name": "greenhouse-mosquitto-1",
+   "NetIO": "1.2kB / 730B",
+   "PIDs": "1"
+  }
+ ],
+ "load": [
+  {
+   "BlockIO": "0B / 0B",
+   "CPUPerc": "0.12%",
+   "Container": "a8d11fcd1fc4a0fb57c16f12b3ecb275d531daae252358240743c3cdffe0d351",
+   "ID": "a8d11fcd1fc4",
+   "MemPerc": "0.05%",
+   "MemUsage": "3.895MiB / 7.834GiB",
+   "Name": "greenhouse-web-1",
+   "NetIO": "1.55MB / 1.28MB",
+   "PIDs": "3"
+  },
+  {
+   "BlockIO": "0B / 0B",
+   "CPUPerc": "1.36%",
+   "Container": "0157773e4822d96b83612f62de68fcec6615259b5e6564c414192879da2aa50d",
+   "ID": "0157773e4822",
+   "MemPerc": "0.53%",
+   "MemUsage": "42.68MiB / 7.834GiB",
+   "Name": "greenhouse-backend-1",
+   "NetIO": "321kB / 1.5MB",
+   "PIDs": "12"
+  },
+  {
+   "BlockIO": "0B / 0B",
+   "CPUPerc": "0.13%",
+   "Container": "ee6ac915bbf03eabbefd496edfd41f6f9d7beedd96bcf6de5ed70d862a252acb",
+   "ID": "ee6ac915bbf0",
+   "MemPerc": "0.04%",
+   "MemUsage": "2.949MiB / 7.834GiB",
+   "Name": "greenhouse-mosquitto-1",
+   "NetIO": "260kB / 259kB",
+   "PIDs": "1"
+  }
+ ]
+}

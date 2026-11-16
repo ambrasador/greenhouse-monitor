@@ -1,0 +1,98 @@
+[
+ {
+  "rate": 100,
+  "seconds": 3,
+  "total": 300,
+  "ok": 300,
+  "wall": 2997,
+  "p50": 2,
+  "p95": 4,
+  "p99": 9,
+  "max": 34,
+  "serverCpuMsPerClient": 2.661
+ },
+ {
+  "rate": 200,
+  "seconds": 3,
+  "total": 600,
+  "ok": 600,
+  "wall": 3001,
+  "p50": 2,
+  "p95": 9,
+  "p99": 24,
+  "max": 48,
+  "serverCpuMsPerClient": 2.072
+ },
+ {
+  "rate": 400,
+  "seconds": 3,
+  "total": 1200,
+  "ok": 1200,
+  "wall": 3037,
+  "p50": 3,
+  "p95": 28,
+  "p99": 61,
+  "max": 88,
+  "serverCpuMsPerClient": 1.653
+ },
+ {
+  "rate": 600,
+  "seconds": 3,
+  "total": 1800,
+  "ok": 1800,
+  "wall": 3001,
+  "p50": 18,
+  "p95": 144,
+  "p99": 192,
+  "max": 213,
+  "serverCpuMsPerClient": 1.363
+ },
+ {
+  "rate": 800,
+  "seconds": 3,
+  "total": 2400,
+  "ok": 2400,
+  "wall": 3011,
+  "p50": 58,
+  "p95": 223,
+  "p99": 282,
+  "max": 303,
+  "serverCpuMsPerClient": 1.116
+ },
+ {
+  "rate": 1000,
+  "seconds": 3,
+  "total": 3000,
+  "ok": 3000,
+  "wall": 3369,
+  "p50": 178,
+  "p95": 548,
+  "p99": 586,
+  "max": 1230,
+  "serverCpuMsPerClient": 0.994
+ },
+ {
+  "rate": 1400,
+  "seconds": 3,
+  "total": 4200,
+  "ok": 4200,
+  "wall": 4746,
+  "p50": 500,
+  "p95": 911,
+  "p99": 1842,
+  "max": 1856,
+  "serverCpuMsPerClient": 0.975
+ },
+ {
+  "rate": 2000,
+  "seconds": 3,
+  "total": 6000,
+  "ok": 6000,
+  "wall": 6904,
+  "p50": 961,
+  "p95": 2046,
+  "p99": 3118,
+  "max": 3439,
+  "serverCpuMsPerClient": 0.96
+ }
+]

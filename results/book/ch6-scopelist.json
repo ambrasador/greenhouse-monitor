@@ -1,0 +1,67 @@
+{
+  "node": "v22.23.4",
+  "zones": 200,
+  "runs": 60,
+  "rows": [
+    {
+      "devices": 1000,
+      "admin": {
+        "medianMs": 0.059567,
+        "maxMs": 0.699015,
+        "rowsReturned": 51
+      },
+      "zone": {
+        "medianMs": 0.680999,
+        "maxMs": 2.256744,
+        "rowsReturned": 5,
+        "expandedMs": 0.064875
+      },
+      "few": {
+        "medianMs": 0.676891,
+        "maxMs": 2.110391,
+        "rowsReturned": 3,
+        "expandedMs": 0.062979
+      }
+    },
+    {
+      "devices": 10000,
+      "admin": {
+        "medianMs": 0.060493,
+        "maxMs": 0.095838,
+        "rowsReturned": 51
+      },
+      "zone": {
+        "medianMs": 6.283279,
+        "maxMs": 9.017974,
+        "rowsReturned": 50,
+        "expandedMs": 0.112706
+      },
+      "few": {
+        "medianMs": 5.797352,
+        "maxMs": 6.937077,
+        "rowsReturned": 3,
+        "expandedMs": 0.063742
+      }
+    },
+    {
+      "devices": 100000,
+      "admin": {
+        "medianMs": 0.058307,
+        "maxMs": 0.114269,
+        "rowsReturned": 51
+      },
+      "zone": {
+        "medianMs": 6.18555,
+        "maxMs": 7.173281,
+        "rowsReturned": 51,
+        "expandedMs": 0.251842
+      },
+      "few": {
+        "medianMs": 59.130821,
+        "maxMs": 91.030351,
+        "rowsReturned": 3,
+        "expandedMs": 0.056336
+      }
+    }
+  ]
+}

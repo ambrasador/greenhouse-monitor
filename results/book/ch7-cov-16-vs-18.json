@@ -1,0 +1,18 @@
+{
+ "full": {
+  "rc": 0,
+  "tests": 23,
+  "stmts": 92.61,
+  "branch": 79.1,
+  "funcs": 76.0,
+  "lines": 92.61
+ },
+ "without": {
+  "rc": 0,
+  "tests": 21,
+  "stmts": 92.61,
+  "branch": 79.1,
+  "funcs": 76.0,
+  "lines": 92.61
+ }
+}

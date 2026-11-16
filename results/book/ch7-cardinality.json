@@ -1,0 +1,56 @@
+{
+ "host": "Node v22.23.4",
+ "gauge": [
+  {
+   "devices": 200,
+   "bytes": 15706,
+   "lines": 202,
+   "buildMs": 0.474117,
+   "bytesPerDevice": 78.53
+  },
+  {
+   "devices": 300,
+   "bytes": 23506,
+   "lines": 302,
+   "buildMs": 0.518089,
+   "bytesPerDevice": 78.35333333333334
+  },
+  {
+   "devices": 1500,
+   "bytes": 117106,
+   "lines": 1502,
+   "buildMs": 2.238891,
+   "bytesPerDevice": 78.07066666666667
+  },
+  {
+   "devices": 3000,
+   "bytes": 234106,
+   "lines": 3002,
+   "buildMs": 3.97113,
+   "bytesPerDevice": 78.03533333333333
+  },
+  {
+   "devices": 100000,
+   "bytes": 7800106,
+   "lines": 100002,
+   "buildMs": 236.321332,
+   "bytesPerDevice": 78.00106
+  }
+ ],
+ "histogram": [
+  {
+   "devices": 200,
+   "bytes": 153878,
+   "lines": 2402,
+   "buildMs": 2.890288,
+   "bytesPerDevice": 769.39
+  },
+  {
+   "devices": 3000,
+   "bytes": 2307078,
+   "lines": 36002,
+   "buildMs": 45.778406,
+   "bytesPerDevice": 769.026
+  }
+ ]
+}

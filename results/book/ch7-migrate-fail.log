@@ -1,0 +1,6 @@
+schema-mobile.sql: SQLITE_ERROR - no such column: session_id
+INSERT: SQLITE_ERROR - table push_tokens has no column named session_id
+з міграцією: user_version = 1 ; події: migrated 1
+з міграцією: INSERT старої форми: ok
+з міграцією: INSERT нової форми: ok
+з міграцією: рядків у push_tokens = 3 ; session_id старого рядка = null

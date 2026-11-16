@@ -1,0 +1,9 @@
+до: 401 ip=172.18.0.3
+через 2 с: 502 backend ip=172.18.0.5 health=healthy
+через 4 с: 502 backend ip=172.18.0.5 health=healthy
+через 6 с: 502 backend ip=172.18.0.5 health=healthy
+через 8 с: 502 backend ip=172.18.0.5 health=healthy
+через 10 с: 502 backend ip=172.18.0.5 health=healthy
+через 12 с: 502 backend ip=172.18.0.5 health=healthy
+після зняття зайнятої адреси (nginx не перезавантажено): 000
+після nginx -s reload: 401

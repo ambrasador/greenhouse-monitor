@@ -1,0 +1,87 @@
+{
+ "pub": {
+  "http": {
+   "version": "1.6.0",
+   "published": "2025-11-10T18:27:56.434747Z",
+   "likes": 8480,
+   "points": 160,
+   "max": 160,
+   "dl30": 14247607
+  },
+  "shared_preferences": {
+   "version": "2.5.6",
+   "published": "2026-10-05T23:53:39.579508Z",
+   "likes": 10587,
+   "points": 160,
+   "max": 160,
+   "dl30": 8963061
+  },
+  "firebase_messaging": {
+   "version": "17.0.1",
+   "published": "2026-10-23T08:47:20.023812Z",
+   "likes": 3953,
+   "points": 160,
+   "max": 160,
+   "dl30": 4202129
+  },
+  "flutter_blue_plus": {
+   "version": "2.3.14",
+   "published": "2026-10-03T06:59:32.602236Z",
+   "likes": 1274,
+   "points": 120,
+   "max": 160,
+   "dl30": 267699
+  },
+  "uuid": {
+   "version": "4.6.0",
+   "published": "2026-07-15T10:49:38.445603Z",
+   "likes": 2738,
+   "points": 160,
+   "max": 160,
+   "dl30": 18407581
+  },
+  "web_socket_channel": {
+   "version": "3.0.3",
+   "published": "2025-04-17T20:42:13.656396Z",
+   "likes": 1647,
+   "points": 150,
+   "max": 160,
+   "dl30": 12643171
+  },
+  "flutter_secure_storage": {
+   "version": "11.2.0",
+   "published": "2026-09-16T11:48:19.409417Z",
+   "likes": 4509,
+   "points": 160,
+   "max": 160,
+   "dl30": 5792682
+  }
+ },
+ "npm": {
+  "react-native": {
+   "version": "0.88.1",
+   "published": "2026-10-27T14:43:35.156Z",
+   "dl_month": 61098338
+  },
+  "@react-native-firebase/messaging": {
+   "version": "27.1.0",
+   "published": "2026-10-23T20:22:26.187Z",
+   "dl_month": 3858328
+  },
+  "react-native-ble-plx": {
+   "version": "3.5.1",
+   "published": "2026-02-18T20:45:08.395Z",
+   "dl_month": 901806
+  },
+  "@react-native-async-storage/async-storage": {
+   "version": "3.1.1",
+   "published": "2026-05-29T13:46:33.055Z",
+   "dl_month": 31556556
+  },
+  "react-native-mmkv": {
+   "version": "4.3.2",
+   "published": "2026-06-22T08:27:45.439Z",
+   "dl_month": 6837377
+  }
+ }
+}

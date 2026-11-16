@@ -1,0 +1,38 @@
+ Volume greenhouse_db Creating 
+ Volume greenhouse_db Creating 
+ Network greenhouse_default Creating 
+ Network greenhouse_default Creating 
+ Volume greenhouse_broker Creating 
+ Volume greenhouse_broker Creating 
+ Volume greenhouse_broker Created 
+ Volume greenhouse_broker Created 
+ Volume greenhouse_db Created 
+ Volume greenhouse_db Created 
+ Network greenhouse_default Created 
+ Network greenhouse_default Created 
+ Container greenhouse-mosquitto-1 Creating 
+ Container greenhouse-mosquitto-1 Created 
+ Container greenhouse-backend-1 Creating 
+ Container greenhouse-backend-1 Created 
+ Container greenhouse-web-1 Creating 
+ Container greenhouse-web-1 Created 
+ Container greenhouse-mosquitto-1 Starting 
+ Container greenhouse-mosquitto-1 Started 
+ Container greenhouse-mosquitto-1 Waiting 
+ Container greenhouse-mosquitto-1 Healthy 
+ Container greenhouse-backend-1 Starting 
+ Container greenhouse-backend-1 Started 
+ Container greenhouse-backend-1 Waiting 
+ Container greenhouse-backend-1 Healthy 
+ Container greenhouse-web-1 Starting 
+ Container greenhouse-web-1 Started 
+ Container greenhouse-mosquitto-1 Waiting 
+ Container greenhouse-backend-1 Waiting 
+ Container greenhouse-web-1 Waiting 
+ Container greenhouse-mosquitto-1 Healthy 
+ Container greenhouse-backend-1 Healthy 
+ Container greenhouse-web-1 Healthy 
+зареєстровано gh1-s01
+створено b0e8e52a-007f-444e-a65c-df382da523f6
+ok: пристрій → брокер → сервер → проксі
+ok: /metrics назовні 404, всередині рахує показання

@@ -1,0 +1,72 @@
+{
+ "steady": {
+  "window": [
+   10,
+   95
+  ],
+  "storedPerSec": 13.319212394100772,
+  "cpuPct": 1.7289665259717908,
+  "rssMB": 97.48598345588235,
+  "messages": 1144.0,
+  "p50ms": 0.4948096885813149,
+  "p99ms": 4.734012738853502,
+  "meanMs": 0.6456153234265731,
+  "p99MeanOfWindows": 5.603597105508852,
+  "p99MedianOfWindows": 4.599999999999998,
+  "p99MaxWindow": 22.79999999999973,
+  "p99MaxWindowAt": 30.08,
+  "windows": 17,
+  "lagP99ms": 11.244723705882352
+ },
+ "outage": {
+  "stopEvent": 100.36,
+  "startEvent": 125.38,
+  "healthyEvent": 126.68,
+  "firstScrapeBrokerDown": 100.1,
+  "firstScrapeBrokerUp": 130.09,
+  "ready503": [
+   100.1,
+   125.11
+  ],
+  "maxAgeSec": 25.206099271774292,
+  "maxHealthStreak": 2,
+  "healthStates": [
+   "healthy"
+  ]
+ },
+ "reconcile": {
+  "simPublished": 2860,
+  "simDuplicates": 30,
+  "simInvalid": 300,
+  "simSkippedOffline": 344,
+  "stored": 2860.0,
+  "duplicate": 30.0,
+  "rejected": 300.0,
+  "byReason": {
+   "out_of_range": 75.0,
+   "bad_json": 75.0,
+   "unknown_metric": 75.0,
+   "bad_ts": 75.0
+  },
+  "loginFail": 12.0,
+  "httpByStatus": {
+   "200": 199.0,
+   "401": 12.0,
+   "404": 21.0
+  },
+  "clientHttp": {
+   "200": 198,
+   "404": 21,
+   "login401": 12
+  }
+ },
+ "exposition": {
+  "lines": 277,
+  "bytes": 16314,
+  "series": 161,
+  "greenhouseSeries": 70,
+  "httpSeries": 48,
+  "nodejsSeries": 82,
+  "processSeries": 9
+ }
+}

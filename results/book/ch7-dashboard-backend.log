@@ -1,0 +1,4 @@
+{"level":"info","time":"2026-11-11T12:50:52.307Z","service":"greenhouse","auth":true,"jwt_kids":["k1"],"jwt_current":"k1","webhook_secrets":1,"origins":["http://localhost:8080"],"msg":"security"}
+{"level":"info","time":"2026-11-11T12:50:52.318Z","service":"greenhouse","port":3000,"msg":"listening"}
+{"level":"warn","time":"2026-11-11T12:52:45.207Z","service":"greenhouse","msg":"broker_down"}
+{"level":"info","time":"2026-11-11T12:53:11.243Z","service":"greenhouse","msg":"broker_up"}

@@ -1,0 +1,77 @@
+пристроїв: 200
+готово: знімків 49 рядків журналу 4
+dash rc=0
+{
+ "steady": {
+  "window": [
+   10,
+   95
+  ],
+  "storedPerSec": 13.317923731658652,
+  "cpuPct": 1.63805015134372,
+  "rssMB": 87.83157169117646,
+  "messages": 1141.0,
+  "p50ms": 0.45933977455716585,
+  "p99ms": 4.674687499999997,
+  "meanMs": 0.5971740166520594,
+  "p99MeanOfWindows": 4.605643611290668,
+  "p99MedianOfWindows": 4.573333333333333,
+  "p99MaxWindow": 6.499999999999986,
+  "p99MaxWindowAt": 90.09,
+  "windows": 17,
+  "lagP99ms": 11.176296411764707
+ },
+ "outage": {
+  "stopEvent": 100.31,
+  "startEvent": 125.33,
+  "healthyEvent": 126.62,
+  "firstScrapeBrokerDown": 100.1,
+  "firstScrapeBrokerUp": 130.09,
+  "ready503": [
+   100.1,
+   125.14
+  ],
+  "maxAgeSec": 25.237540006637573,
+  "maxHealthStreak": 2,
+  "healthStates": [
+   "healthy"
+  ]
+ },
+ "reconcile": {
+  "simPublished": 2860,
+  "simDuplicates": 33,
+  "simInvalid": 300,
+  "simSkippedOffline": 344,
+  "stored": 2860.0,
+  "duplicate": 33.0,
+  "rejected": 300.0,
+  "byReason": {
+   "out_of_range": 75.0,
+   "bad_json": 75.0,
+   "unknown_metric": 75.0,
+   "bad_ts": 75.0
+  },
+  "loginFail": 12.0,
+  "httpByStatus": {
+   "200": 199.0,
+   "401": 12.0,
+   "404": 21.0
+  },
+  "clientHttp": {
+   "200": 198,
+   "404": 21,
+   "login401": 12
+  }
+ },
+ "exposition": {
+  "lines": 281,
+  "bytes": 16514,
+  "series": 162,
+  "greenhouseSeries": 71,
+  "httpSeries": 48,
+  "nodejsSeries": 82,
+  "processSeries": 9
+ }
+}
+sum rc=0
+12:55:08

@@ -1,0 +1,52 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>wire</title>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/mqtt.min.js"></script>
+<script>
+const q = new URLSearchParams(location.search);
+const DEV = 'gh1-s01';
+const METRICS = 'temperature,humidity,soil_moisture,light';
+window.rx = 0;                                  // отримано вимірювань
+window.msgs = [];                               // сирі повідомлення (для демонстрації)
+const subscribe = (s) => new Promise((res, rej) =>
+  s.emit('subscribe', { device: DEV }, (r) => (r.ok ? res() : rej(new Error(r.error)))));
+const ioConnect = (opts, waitUpgrade = false) => new Promise((res, rej) => {
+  const s = io(opts);
+  s.on('telemetry:update', (f) => { window.rx += f.readings.length; });
+  s.on('connect_error', rej);
+  s.on('connect', async () => {
+    await subscribe(s);
+    if (!waitUpgrade || s.io.engine.transport.name === 'websocket') return res();
+    s.io.engine.once('upgrade', () => res());
+  });
+});
+window.connectors = {
+  poll: async () => {},
+  sse: () => new Promise((res) => {
+    const es = new EventSource(`/api/v1/devices/${DEV}/stream?metrics=${METRICS}`);
+    es.addEventListener('telemetry', (e) => { window.rx += 1; window.msgs.push(e.data); });
+    es.addEventListener('ready', () => res());
+  }),
+  'socketio-ws': () => ioConnect({ transports: ['websocket'] }),
+  'socketio-poll': () => ioConnect({ transports: ['polling'], upgrade: false }),
+  'socketio-upgrade': () => ioConnect({}, true),
+  'ws-raw': () => new Promise((res, rej) => {
+    const ws = new WebSocket(q.get('raw'));
+    ws.onmessage = (e) => { window.rx += JSON.parse(e.data).readings.length; };
+    ws.onopen = () => res();
+    ws.onerror = rej;
+  }),
+  mqtt: () => new Promise((res, rej) => {
+    const c = mqtt.connect(q.get('mqtt'), { protocolVersion: 4, clean: true });
+    c.on('message', (t, p) => { window.rx += 1; window.msgs.push(p.toString()); });
+    c.on('connect', () => c.subscribe(`greenhouse/${q.get('topicDev') ?? DEV}/telemetry`, { qos: 0 },
+      (e) => (e ? rej(e) : res())));
+  }),
+};
+window.pollOnce = async () => {
+  const r = await fetch(`/api/v1/devices/${q.get('pollDev') ?? DEV}`);
+  await r.json();
+  return r.status;
+};
+</script>

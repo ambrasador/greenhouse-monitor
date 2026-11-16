@@ -1,0 +1,7 @@
+
+> greenhouse-monitor@1.0.0 test:rules
+> docker run --rm -v "$PWD/ops":/ops --entrypoint promtool prom/prometheus:v3.16.0 test rules /ops/alerts.test.yml
+
+Processing test file: /ops/alerts.test.yml
+  SUCCESS
+

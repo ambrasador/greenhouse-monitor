@@ -1,0 +1,222 @@
+{
+ "mode": "sse",
+ "seconds": 25,
+ "frameKB": 8,
+ "rate": 200,
+ "closedAfterS": null,
+ "reason": null,
+ "peakQueued": 37596290,
+ "peakRssMB": 53.8,
+ "peakLiveMB": 39.2,
+ "rssAfterMB": 53.8,
+ "samples": [
+  {
+   "t": 1,
+   "queued": 0,
+   "rssMB": 3.9,
+   "liveMB": 0.7,
+   "sent": 200,
+   "open": true
+  },
+  {
+   "t": 2,
+   "queued": 0,
+   "rssMB": 4,
+   "liveMB": 0.7,
+   "sent": 400,
+   "open": true
+  },
+  {
+   "t": 3,
+   "queued": 900720,
+   "rssMB": 4.5,
+   "liveMB": 1.5,
+   "sent": 600,
+   "open": true
+  },
+  {
+   "t": 4,
+   "queued": 2568704,
+   "rssMB": 5.5,
+   "liveMB": 3.2,
+   "sent": 800,
+   "open": true
+  },
+  {
+   "t": 5,
+   "queued": 4236688,
+   "rssMB": 7.9,
+   "liveMB": 4.9,
+   "sent": 1000,
+   "open": true
+  },
+  {
+   "t": 6,
+   "queued": 5904664,
+   "rssMB": 16.6,
+   "liveMB": 7.8,
+   "sent": 1200,
+   "open": true
+  },
+  {
+   "t": 7,
+   "queued": 7572640,
+   "rssMB": 19.6,
+   "liveMB": 9.5,
+   "sent": 1400,
+   "open": true
+  },
+  {
+   "t": 8,
+   "queued": 9240624,
+   "rssMB": 21.5,
+   "liveMB": 11.1,
+   "sent": 1600,
+   "open": true
+  },
+  {
+   "t": 9,
+   "queued": 10908600,
+   "rssMB": 23.3,
+   "liveMB": 12.8,
+   "sent": 1800,
+   "open": true
+  },
+  {
+   "t": 10,
+   "queued": 12576576,
+   "rssMB": 24.9,
+   "liveMB": 14.4,
+   "sent": 2001,
+   "open": true
+  },
+  {
+   "t": 11,
+   "queued": 14244560,
+   "rssMB": 27.1,
+   "liveMB": 16.1,
+   "sent": 2200,
+   "open": true
+  },
+  {
+   "t": 12,
+   "queued": 15912536,
+   "rssMB": 29,
+   "liveMB": 17.8,
+   "sent": 2401,
+   "open": true
+  },
+  {
+   "t": 13,
+   "queued": 17580520,
+   "rssMB": 30.5,
+   "liveMB": 19.4,
+   "sent": 2601,
+   "open": true
+  },
+  {
+   "t": 14,
+   "queued": 19248504,
+   "rssMB": 32.6,
+   "liveMB": 21,
+   "sent": 2801,
+   "open": true
+  },
+  {
+   "t": 15,
+   "queued": 20924846,
+   "rssMB": 34.4,
+   "liveMB": 22.7,
+   "sent": 3001,
+   "open": true
+  },
+  {
+   "t": 16,
+   "queued": 22592822,
+   "rssMB": 36.6,
+   "liveMB": 24.4,
+   "sent": 3201,
+   "open": true
+  },
+  {
+   "t": 17,
+   "queued": 24252458,
+   "rssMB": 38.5,
+   "liveMB": 26,
+   "sent": 3401,
+   "open": true
+  },
+  {
+   "t": 18,
+   "queued": 25928782,
+   "rssMB": 40.1,
+   "liveMB": 27.7,
+   "sent": 3601,
+   "open": true
+  },
+  {
+   "t": 19,
+   "queued": 27596742,
+   "rssMB": 41.9,
+   "liveMB": 29.3,
+   "sent": 3801,
+   "open": true
+  },
+  {
+   "t": 20,
+   "queued": 29264726,
+   "rssMB": 43.5,
+   "liveMB": 31,
+   "sent": 4001,
+   "open": true
+  },
+  {
+   "t": 21,
+   "queued": 30932710,
+   "rssMB": 45.3,
+   "liveMB": 32.6,
+   "sent": 4201,
+   "open": true
+  },
+  {
+   "t": 22,
+   "queued": 32600694,
+   "rssMB": 47.1,
+   "liveMB": 34.3,
+   "sent": 4401,
+   "open": true
+  },
+  {
+   "t": 23,
+   "queued": 34268670,
+   "rssMB": 48.8,
+   "liveMB": 36,
+   "sent": 4601,
+   "open": true
+  },
+  {
+   "t": 24,
+   "queued": 35936646,
+   "rssMB": 50.5,
+   "liveMB": 37.6,
+   "sent": 4801,
+   "open": true
+  },
+  {
+   "t": 25,
+   "queued": 37596290,
+   "rssMB": 52.3,
+   "liveMB": 39.2,
+   "sent": 5000,
+   "open": true
+  },
+  {
+   "t": 26,
+   "queued": 37596290,
+   "rssMB": 53.8,
+   "liveMB": 37.7,
+   "sent": 5000,
+   "open": true
+  }
+ ]
+}

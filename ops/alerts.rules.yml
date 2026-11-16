@@ -1,0 +1,117 @@
+# Правила сповіщень застосунку. Їх виконує будь-який сервер, що вміє PromQL
+# (адміністрування сервера не входить до курсу). Перевірка:
+#   promtool test rules ops/alerts.test.yml
+groups:
+  - name: greenhouse-slo
+    interval: 1m
+    rules:
+      # Частка відповідей 5xx за вікно. Ділення на нуль (запитів немає) дає
+      # NaN, і порівняння з порогом хибне
+      - record: greenhouse:http_errors:ratio_rate5m
+        expr: |
+          sum(rate(greenhouse_http_request_seconds_count{status=~"5.."}[5m]))
+          / sum(rate(greenhouse_http_request_seconds_count[5m]))
+      - record: greenhouse:http_errors:ratio_rate30m
+        expr: |
+          sum(rate(greenhouse_http_request_seconds_count{status=~"5.."}[30m]))
+          / sum(rate(greenhouse_http_request_seconds_count[30m]))
+      - record: greenhouse:http_errors:ratio_rate1h
+        expr: |
+          sum(rate(greenhouse_http_request_seconds_count{status=~"5.."}[1h]))
+          / sum(rate(greenhouse_http_request_seconds_count[1h]))
+      - record: greenhouse:http_errors:ratio_rate6h
+        expr: |
+          sum(rate(greenhouse_http_request_seconds_count{status=~"5.."}[6h]))
+          / sum(rate(greenhouse_http_request_seconds_count[6h]))
+      - record: greenhouse:http_errors:ratio_rate3d
+        expr: |
+          sum(rate(greenhouse_http_request_seconds_count{status=~"5.."}[3d]))
+          / sum(rate(greenhouse_http_request_seconds_count[3d]))
+
+      # SLO 99,9 % → бюджет помилок 0,001; пороги й вікна з Site Reliability
+      # Workbook, розд. 5
+      - alert: ApiBudgetFastBurn            # 2 % бюджету за годину
+        expr: |
+          greenhouse:http_errors:ratio_rate1h > 14.4 * 0.001
+          and greenhouse:http_errors:ratio_rate5m > 14.4 * 0.001
+        labels: { severity: page }
+        annotations:
+          summary: "API витрачає бюджет помилок у 14,4 раза швидше за норму"
+      - alert: ApiBudgetSlowBurn            # 5 % бюджету за 6 годин
+        expr: |
+          greenhouse:http_errors:ratio_rate6h > 6 * 0.001
+          and greenhouse:http_errors:ratio_rate30m > 6 * 0.001
+        labels: { severity: page }
+        annotations:
+          summary: "API витрачає бюджет помилок у 6 разів швидше за норму"
+      - alert: ApiBudgetTicket              # 10 % бюджету за 3 доби
+        expr: |
+          greenhouse:http_errors:ratio_rate3d > 0.001
+          and greenhouse:http_errors:ratio_rate6h > 0.001
+        labels: { severity: ticket }
+        annotations:
+          summary: "API повільно виходить за бюджет помилок"
+
+  - name: greenhouse-ingest
+    rules:
+      - alert: BrokerDisconnected
+        expr: greenhouse_broker_connected == 0
+        for: 2m
+        labels: { severity: page }
+        annotations:
+          summary: "Сервер не бачить брокера понад 2 хв: показання не надходять"
+
+      # Тиша довше за 5 періодів звітування (теплиця, T = 60 с). Після
+      # перезапуску лічильник часу показань дорівнює 0, тому відлік іде від
+      # старту процесу, і мовчання після старту теж видно
+      - alert: NoReadings
+        expr: |
+          time() - max by (instance) (
+            {__name__=~"(greenhouse_last_reading_timestamp|process_start_time)_seconds"}
+          ) > 300
+        labels: { severity: page }
+        annotations:
+          summary: "Жодного показання понад 5 хв"
+
+      - alert: RejectedShareHigh
+        expr: |
+          sum(rate(greenhouse_readings_total{result="rejected"}[10m]))
+          / sum(rate(greenhouse_readings_total[10m])) > 0.05
+        for: 10m
+        labels: { severity: ticket }
+        annotations:
+          summary: "Понад 5 % повідомлень відхиляють: ймовірно, змінився формат"
+
+      - alert: IngestSlow
+        expr: |
+          histogram_quantile(0.95,
+            sum by (le) (rate(greenhouse_ingest_seconds_bucket[5m]))) > 0.1
+        for: 10m
+        labels: { severity: ticket }
+        annotations:
+          summary: "95-й процентиль опрацювання повідомлення понад 100 мс"
+
+  - name: greenhouse-security
+    rules:
+      - alert: RefreshTokenReuse            # ознака викраденого токена (розділ 6)
+        expr: |
+          increase(greenhouse_audit_events_total{action="refresh.reuse"}[5m]) > 0
+        labels: { severity: page }
+        annotations:
+          summary: "Повторно пред’явлено використаний refresh-токен"
+      - alert: WebhookRejectedSpike
+        expr: |
+          increase(greenhouse_audit_events_total{action="webhook",outcome="rejected"}[5m]) > 20
+        labels: { severity: ticket }
+        annotations:
+          summary: "Понад 20 відхилених вебхуків за 5 хв"
+
+  - name: greenhouse-push
+    rules:
+      # правила не повторюють тривогу, якщо доставки не було (розділ 5)
+      - alert: PushAlertLost
+        expr: |
+          increase(greenhouse_push_total{result=~"expired|gave_up|invalid|config"}[10m]) > 0
+        labels: { severity: page }
+        annotations:
+          summary: "Тривогу не доставлено: {{ $labels.result }}"

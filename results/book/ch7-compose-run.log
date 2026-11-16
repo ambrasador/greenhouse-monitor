@@ -1,0 +1,106 @@
+{
+ "repeat": 3,
+ "stop": {
+  "web": {
+   "runs": [
+    0.32,
+    0.32,
+    0.28
+   ],
+   "median": 0.32,
+   "exitCodes": [
+    0,
+    0,
+    0
+   ]
+  },
+  "backend": {
+   "runs": [
+    0.26,
+    0.29,
+    0.26
+   ],
+   "median": 0.26,
+   "exitCodes": [
+    0,
+    0,
+    0
+   ]
+  },
+  "mosquitto": {
+   "runs": [
+    0.28,
+    0.29,
+    0.28
+   ],
+   "median": 0.28,
+   "exitCodes": [
+    0,
+    0,
+    0
+   ]
+  }
+ },
+ "stopBackendNoInit": {
+  "runs": [
+   0.22,
+   0.28,
+   0.22
+  ],
+  "median": 0.22,
+  "exitCodes": [
+   0,
+   0,
+   0
+  ]
+ },
+ "pid1Demo": {
+  "withoutInit": {
+   "runs": [
+    10.18,
+    10.14,
+    10.14
+   ],
+   "median": 10.14,
+   "exitCodes": [
+    137,
+    137,
+    137
+   ]
+  },
+  "withInit": {
+   "runs": [
+    0.13,
+    0.12,
+    0.13
+   ],
+   "median": 0.13,
+   "exitCodes": [
+    143,
+    143,
+    143
+   ]
+  }
+ },
+ "upExistingVolumes": {
+  "runs": [
+   5.22,
+   5.28,
+   5.3
+  ],
+  "median": 5.28
+ },
+ "restartBackend": {
+  "runs": [
+   0.37,
+   0.35,
+   0.34
+  ],
+  "median": 0.35,
+  "healthRightAfter": [
+   "starting",
+   "starting",
+   "starting"
+  ]
+ }
+}

@@ -1,0 +1,624 @@
+{
+  "throttle": {
+    "perName": 1445,
+    "perIp": 8660,
+    "days10k": 6.920415224913495,
+    "hours1k": 16.608996539792386,
+    "days1e6": 692.0415224913495,
+    "spray": [
+      {
+        "id": "greenhouse",
+        "U": 20,
+        "top10Days": 0.023148148148148147
+      },
+      {
+        "id": "home",
+        "U": 2000,
+        "top10Days": 2.314814814814815
+      },
+      {
+        "id": "metering",
+        "U": 5000,
+        "top10Days": 5.787037037037037
+      },
+      {
+        "id": "fleet",
+        "U": 10,
+        "top10Days": 0.011574074074074073
+      },
+      {
+        "id": "community",
+        "U": 50,
+        "top10Days": 0.05787037037037037
+      }
+    ]
+  },
+  "pkce": {
+    "verifier": "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk",
+    "challenge": "E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM",
+    "expected": "E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM",
+    "ok": true,
+    "verifierLen": 43,
+    "octetsFor43": 33
+  },
+  "claim": {
+    "example": "7QYL-LCB2-SZ3C-GN6T",
+    "bits": 80,
+    "format": true,
+    "halfSpaceDays80": 418313432392605240000,
+    "halfSpaceYears80": 1145279760144025300,
+    "pinMeanDays": 346.02076124567475,
+    "pin1000AccountsHours": 8.304498269896193,
+    "offlineSha256Years80": 15363925705.028133,
+    "offlineSha256PinSec": 0.80211476
+  },
+  "secret": {
+    "guessPerSec": 397022.3093876174,
+    "rows": [
+      {
+        "name": "шість цифр",
+        "space": 1000000,
+        "sec": 1.2593750733333333,
+        "days": 0.000014576100385802468,
+        "years": 3.9907187914585815e-8
+      },
+      {
+        "name": "вісім малих літер",
+        "space": 208827064576,
+        "sec": 262991.59976438474,
+        "days": 3.043884256532231,
+        "years": 0.008333700907685778
+      },
+      {
+        "name": "вісім літер і цифр",
+        "space": 218340105584896,
+        "sec": 274972086.48258615,
+        "days": 3182.5472972521543,
+        "years": 8.713339622866952
+      },
+      {
+        "name": "дванадцять літер і цифр",
+        "space": 3.2262667623979e+21,
+        "sec": 4063079940487751,
+        "days": 47026388200.089714,
+        "years": 128751233.94959538
+      },
+      {
+        "name": "32 випадкові байти",
+        "space": 1.157920892373162e+77,
+        "sec": 1.4582567087466496e+71,
+        "days": 1.6877971166049186e+66,
+        "years": 4.6209366642160676e+63
+      }
+    ]
+  },
+  "replay": {
+    "bytesPerEntry": 117.502,
+    "probe": [
+      {
+        "lambda": 10,
+        "peakExact": 5999,
+        "peakAhead": 8999
+      },
+      {
+        "lambda": 50,
+        "peakExact": 29959,
+        "peakAhead": 44959
+      }
+    ],
+    "domains": [
+      {
+        "id": "greenhouse",
+        "lambda": 13.333333333333334,
+        "entries600": 8000,
+        "entries900": 12000,
+        "mb600": 0.940016,
+        "mb900": 1.410024
+      },
+      {
+        "id": "home",
+        "lambda": 10,
+        "entries600": 6000,
+        "entries900": 9000,
+        "mb600": 0.705012,
+        "mb900": 1.057518
+      },
+      {
+        "id": "metering",
+        "lambda": 111.11111111111111,
+        "entries600": 66666.66666666667,
+        "entries900": 100000,
+        "mb600": 7.833466666666667,
+        "mb900": 11.7502
+      },
+      {
+        "id": "fleet",
+        "lambda": 60,
+        "entries600": 36000,
+        "entries900": 54000,
+        "mb600": 4.230072,
+        "mb900": 6.345108
+      },
+      {
+        "id": "community",
+        "lambda": 5,
+        "entries600": 3000,
+        "entries900": 4500,
+        "mb600": 0.352506,
+        "mb900": 0.528759
+      }
+    ]
+  },
+  "gate": {
+    "hashMs": 222.769682,
+    "concurrency": 2,
+    "queue": 32,
+    "capacityPerSec": 8.977882367314239,
+    "maxQueueWaitSec": 3.564314912,
+    "admittedAtOnce": 34,
+    "domains": [
+      {
+        "id": "greenhouse",
+        "U": 20,
+        "allLoginSec": 2.22769682,
+        "refreshPerSec": 0.022222222222222223,
+        "shedShare60s": 0
+      },
+      {
+        "id": "home",
+        "U": 2000,
+        "allLoginSec": 222.769682,
+        "refreshPerSec": 2.2222222222222223,
+        "shedShare60s": 0.7306635289805729
+      },
+      {
+        "id": "metering",
+        "U": 5000,
+        "allLoginSec": 556.9242049999999,
+        "refreshPerSec": 5.555555555555555,
+        "shedShare60s": 0.8922654115922292
+      },
+      {
+        "id": "fleet",
+        "U": 10,
+        "allLoginSec": 1.11384841,
+        "refreshPerSec": 0.011111111111111112,
+        "shedShare60s": 0
+      },
+      {
+        "id": "community",
+        "U": 50,
+        "allLoginSec": 5.56924205,
+        "refreshPerSec": 0.05555555555555555,
+        "shedShare60s": 0
+      }
+    ],
+    "offlinePerSec": 8.137745303634963,
+    "offlineDict1e6Hours": 34.134489027777775,
+    "shaPerSec": 1246704.3992557873,
+    "shaOverScrypt": 153200.22349420423
+  },
+  "rbac": {
+    "roles": [
+      "viewer",
+      "operator",
+      "admin"
+    ],
+    "actions": 12,
+    "cells": 36,
+    "allowed": {
+      "viewer": 6,
+      "operator": 10,
+      "admin": 11
+    },
+    "allowedTotal": 27,
+    "matrix": [
+      {
+        "action": "self:read",
+        "viewer": true,
+        "operator": true,
+        "admin": true
+      },
+      {
+        "action": "push:write",
+        "viewer": true,
+        "operator": true,
+        "admin": true
+      },
+      {
+        "action": "device:read",
+        "viewer": true,
+        "operator": true,
+        "admin": true
+      },
+      {
+        "action": "telemetry:read",
+        "viewer": true,
+        "operator": true,
+        "admin": true
+      },
+      {
+        "action": "stream:read",
+        "viewer": true,
+        "operator": true,
+        "admin": true
+      },
+      {
+        "action": "settings:read",
+        "viewer": true,
+        "operator": true,
+        "admin": true
+      },
+      {
+        "action": "settings:write",
+        "viewer": false,
+        "operator": true,
+        "admin": true
+      },
+      {
+        "action": "command:create",
+        "viewer": false,
+        "operator": true,
+        "admin": true
+      },
+      {
+        "action": "command:read",
+        "viewer": false,
+        "operator": true,
+        "admin": true
+      },
+      {
+        "action": "device:claim",
+        "viewer": false,
+        "operator": true,
+        "admin": true
+      },
+      {
+        "action": "audit:read",
+        "viewer": false,
+        "operator": false,
+        "admin": true
+      },
+      {
+        "action": "ingest:write",
+        "viewer": false,
+        "operator": false,
+        "admin": false
+      }
+    ],
+    "routes": 20,
+    "byAction": {
+      "stream:read": [
+        "get /devices/{id}/stream",
+        "post /devices/{id}/stream-ticket"
+      ],
+      "(без дії)": [
+        "post /auth/login",
+        "post /auth/refresh",
+        "post /auth/logout"
+      ],
+      "self:read": [
+        "get /auth/me"
+      ],
+      "audit:read": [
+        "get /audit"
+      ],
+      "push:write": [
+        "post /push-tokens",
+        "delete /push-tokens/{token}"
+      ],
+      "device:claim": [
+        "post /devices/{id}/claim"
+      ],
+      "device:read": [
+        "get /devices",
+        "get /devices/{id}",
+        "get /devices/{id}/latest"
+      ],
+      "telemetry:read": [
+        "get /telemetry",
+        "get /alerts"
+      ],
+      "ingest:write": [
+        "post /ingest/webhook"
+      ],
+      "command:create": [
+        "post /devices/{id}/commands"
+      ],
+      "command:read": [
+        "get /commands/{id}"
+      ],
+      "settings:read": [
+        "get /devices/{id}/settings"
+      ],
+      "settings:write": [
+        "put /devices/{id}/settings"
+      ]
+    },
+    "counts": {
+      "stream:read": 2,
+      "(без дії)": 3,
+      "self:read": 1,
+      "audit:read": 1,
+      "push:write": 2,
+      "device:claim": 1,
+      "device:read": 3,
+      "telemetry:read": 2,
+      "ingest:write": 1,
+      "command:create": 1,
+      "command:read": 1,
+      "settings:read": 1,
+      "settings:write": 1
+    }
+  },
+  "jwt": {
+    "sigChars": {
+      "HS256": 43,
+      "RS256": 342,
+      "ES256": 86
+    },
+    "tokenBytes": {
+      "HS256": 423,
+      "RS256": 722,
+      "ES256": 466
+    },
+    "measured": [
+      {
+        "alg": "HS256",
+        "tokenBytes": 423
+      },
+      {
+        "alg": "HS256",
+        "tokenBytes": 423
+      },
+      {
+        "alg": "RS256",
+        "tokenBytes": 722
+      },
+      {
+        "alg": "ES256",
+        "tokenBytes": 466
+      }
+    ],
+    "headerLine": 22,
+    "perRequestBytes": 447,
+    "at4000rps": 1.788,
+    "coreShare": {
+      "HS256, секрет-буфер": 0.137881126,
+      "HS256, KeyObject": 0.0390287846,
+      "RS256": 0.20417258666666668,
+      "ES256": 0.379854908
+    }
+  },
+  "retention": {
+    "batch": 5000,
+    "batchMedianMs": 9.276403,
+    "batchMaxMs": 16.642311,
+    "domains": [
+      {
+        "id": "greenhouse",
+        "rowsPerDay": 1152000,
+        "batches": 231,
+        "totalSec": 2.142849093
+      },
+      {
+        "id": "home",
+        "rowsPerDay": 864000,
+        "batches": 173,
+        "totalSec": 1.6048177190000001
+      },
+      {
+        "id": "metering",
+        "rowsPerDay": 9600000,
+        "batches": 1920,
+        "totalSec": 17.810693760000003
+      },
+      {
+        "id": "fleet",
+        "rowsPerDay": 5184000,
+        "batches": 1037,
+        "totalSec": 9.619629911
+      },
+      {
+        "id": "community",
+        "rowsPerDay": 432000,
+        "batches": 87,
+        "totalSec": 0.8070470610000001
+      }
+    ]
+  },
+  "grid": [
+    {
+      "city": "Херсон",
+      "lat": 46.6354,
+      "deg": 0.01,
+      "ns": 1.111950802335329,
+      "ew": 0.7635081954435635,
+      "maxErr": 0.6744218545027416
+    },
+    {
+      "city": "Херсон",
+      "lat": 46.6354,
+      "deg": 0.001,
+      "ns": 0.1111950802335329,
+      "ew": 0.07635081954435635,
+      "maxErr": 0.06744218545027417
+    },
+    {
+      "city": "Одеса",
+      "lat": 46.4825,
+      "deg": 0.01,
+      "ns": 1.111950802335329,
+      "ew": 0.7656627430569357,
+      "maxErr": 0.6750322256973464
+    },
+    {
+      "city": "Одеса",
+      "lat": 46.4825,
+      "deg": 0.001,
+      "ns": 0.1111950802335329,
+      "ew": 0.07656627430569357,
+      "maxErr": 0.06750322256973465
+    },
+    {
+      "city": "Львів",
+      "lat": 49.8397,
+      "deg": 0.01,
+      "ns": 1.111950802335329,
+      "ew": 0.7171285426673677,
+      "maxErr": 0.6615716010989295
+    },
+    {
+      "city": "Львів",
+      "lat": 49.8397,
+      "deg": 0.001,
+      "ns": 0.1111950802335329,
+      "ew": 0.07171285426673676,
+      "maxErr": 0.06615716010989295
+    },
+    {
+      "city": "Харків",
+      "lat": 49.9935,
+      "deg": 0.01,
+      "ns": 1.111950802335329,
+      "ew": 0.7148448277907208,
+      "maxErr": 0.6609534239705032
+    },
+    {
+      "city": "Харків",
+      "lat": 49.9935,
+      "deg": 0.001,
+      "ns": 0.1111950802335329,
+      "ew": 0.07148448277907207,
+      "maxErr": 0.06609534239705032
+    },
+    {
+      "city": "Київ",
+      "lat": 50.4501,
+      "deg": 0.01,
+      "ns": 1.111950802335329,
+      "ew": 0.7080346752768263,
+      "maxErr": 0.6591182913955095
+    },
+    {
+      "city": "Київ",
+      "lat": 50.4501,
+      "deg": 0.001,
+      "ns": 0.1111950802335329,
+      "ew": 0.07080346752768263,
+      "maxErr": 0.06591182913955095
+    }
+  ],
+  "pseudonym": [
+    {
+      "space": 1000000,
+      "sec": 0.80211476,
+      "min": 0.013368579333333333,
+      "days": 0.000009283735648148149
+    },
+    {
+      "space": 1000000000,
+      "sec": 802.11476,
+      "min": 13.368579333333335,
+      "days": 0.00928373564814815
+    },
+    {
+      "space": 1000000000000,
+      "sec": 802114.76,
+      "min": 13368.579333333333,
+      "days": 9.283735648148149
+    }
+  ],
+  "revoke": {
+    "sseHeartbeatSec": 15,
+    "socketRevalidateSec": 30,
+    "accessTtlSec": 900
+  },
+  "refresh": {
+    "exchangeUs": 200.359,
+    "exchangesPerSec": 4991.04108125914,
+    "bytesPerRow": 305.13674316284187,
+    "rowsPerDay": 96,
+    "rowsPerSession": 3552,
+    "mibPerSession": 1.0336358182090897,
+    "domains": [
+      {
+        "id": "greenhouse",
+        "U": 20,
+        "rowsPerDay": 1920,
+        "steadyRows": 71040,
+        "steadyMiB": 20.67271636418179,
+        "exchangesPerSec": 0.022222222222222223,
+        "loginShare": 0.000004452422222222222
+      },
+      {
+        "id": "home",
+        "U": 2000,
+        "rowsPerDay": 192000,
+        "steadyRows": 7104000,
+        "steadyMiB": 2067.2716364181792,
+        "exchangesPerSec": 2.2222222222222223,
+        "loginShare": 0.0004452422222222222
+      },
+      {
+        "id": "metering",
+        "U": 5000,
+        "rowsPerDay": 480000,
+        "steadyRows": 17760000,
+        "steadyMiB": 5168.179091045448,
+        "exchangesPerSec": 5.555555555555555,
+        "loginShare": 0.0011131055555555554
+      },
+      {
+        "id": "fleet",
+        "U": 10,
+        "rowsPerDay": 960,
+        "steadyRows": 35520,
+        "steadyMiB": 10.336358182090896,
+        "exchangesPerSec": 0.011111111111111112,
+        "loginShare": 0.000002226211111111111
+      },
+      {
+        "id": "community",
+        "U": 50,
+        "rowsPerDay": 4800,
+        "steadyRows": 177600,
+        "steadyMiB": 51.68179091045448,
+        "exchangesPerSec": 0.05555555555555555,
+        "loginShare": 0.000011131055555555555
+      }
+    ]
+  },
+  "webhook": {
+    "batch500Bytes": 44712,
+    "bytesPerEvent": 89.424,
+    "limitBytes": 262144,
+    "headroom": 5.862945070674539,
+    "throughputMBs": 1446.6067121880415,
+    "floodRps": 100,
+    "secrets": 2,
+    "floodCoreShare": 0.036242607999999996,
+    "ratio": [
+      {
+        "bytes": 256,
+        "ratio": 1.8446040919767261
+      },
+      {
+        "bytes": 1024,
+        "ratio": 1.7325637242167697
+      },
+      {
+        "bytes": 16384,
+        "ratio": 1.9170840876981128
+      },
+      {
+        "bytes": 65536,
+        "ratio": 2.065324464970486
+      },
+      {
+        "bytes": 262144,
+        "ratio": 2.275878527652683
+      }
+    ]
+  }
+}

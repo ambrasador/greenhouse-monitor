@@ -1,0 +1,18 @@
+1793942293820281336 greenhouse-mosquitto-1 create
+1793942293852465495 greenhouse-backend-1 create
+1793942293882798399 greenhouse-web-1 create
+1793942294041830526 greenhouse-mosquitto-1 start
+1793942295043103324 greenhouse-mosquitto-1 exec_create: /bin/sh -c mosquitto_sub -h 127.0.0.1 -t '$SYS/broker/uptime' -C 1 -W 3
+1793942295043241990 greenhouse-mosquitto-1 exec_start: /bin/sh -c mosquitto_sub -h 127.0.0.1 -t '$SYS/broker/uptime' -C 1 -W 3
+1793942295143618388 greenhouse-mosquitto-1 exec_die
+1793942295144163332 greenhouse-mosquitto-1 health_status: healthy
+1793942295659197048 greenhouse-backend-1 start
+1793942296660628353 greenhouse-backend-1 exec_create: node healthcheck.js
+1793942296660677615 greenhouse-backend-1 exec_start: node healthcheck.js
+1793942296796772831 greenhouse-backend-1 exec_die
+1793942296797207676 greenhouse-backend-1 health_status: healthy
+1793942297308185122 greenhouse-web-1 start
+1793942298309501713 greenhouse-web-1 exec_create: wget -q --spider http://127.0.0.1/
+1793942298309621754 greenhouse-web-1 exec_start: wget -q --spider http://127.0.0.1/
+1793942298371489186 greenhouse-web-1 exec_die
+1793942298371839877 greenhouse-web-1 health_status: healthy

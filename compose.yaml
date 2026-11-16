@@ -1,0 +1,51 @@
+name: greenhouse
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.1.2-alpine
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - broker:/mosquitto/data
+    ports:
+      # лише для імітатора пристроїв із цього комп’ютера
+      - "127.0.0.1:1883:1883"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - mosquitto_sub -h 127.0.0.1 -t '$$SYS/broker/uptime' -C 1 -W 3
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+      start_interval: 1s
+    restart: unless-stopped
+
+  backend:
+    build: { context: ., target: app }
+    image: greenhouse-backend:1.0
+    init: true
+    # секрети розділу 6; файл .env не потрапляє ні в git, ні в образ
+    env_file: .env
+    environment:
+      MQTT_URL: mqtt://mosquitto:1883
+    volumes:
+      # файл SQLite переживає перестворення контейнера
+      - db:/data
+    depends_on:
+      mosquitto: { condition: service_healthy }
+    # Docker перезапускає процес, що впав, із паузою, яка подвоюється
+    # від 100 мс до 60 с: процес, який падає одразу, не заповнює журнал
+    restart: unless-stopped
+
+  web:
+    build: { context: ., target: web }
+    image: greenhouse-web:1.0
+    ports:
+      - "8080:80"
+    depends_on:
+      backend: { condition: service_healthy }
+    restart: unless-stopped
+
+volumes:
+  db:
+  broker:

@@ -1,0 +1,27 @@
+
+> greenhouse-monitor@1.0.0 test:coverage
+> node --experimental-vm-modules node_modules/jest/bin/jest.js --selectProjects unit integration --coverage
+
+Running 2 projects:
+- integration
+- unit
+(node:20420) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------|---------|----------|---------|---------|-------------------
+All files       |   92.35 |    79.23 |      75 |   92.35 |                   
+ alerts.js      |   78.46 |    84.21 |   71.42 |   78.46 | 48-61             
+ app.js         |    93.1 |      100 |      80 |    93.1 | 19-20             
+ core.js        |   89.24 |    73.33 |   85.71 |   89.24 | 80-89             
+ health.js      |     100 |    91.66 |     100 |     100 | 15                
+ mqtt-source.js |      94 |    73.33 |   77.77 |      94 | 33-35             
+ ops-metrics.js |     100 |    92.59 |   88.88 |     100 | 22,112            
+ server.js      |   91.78 |       50 |   28.57 |   91.78 | 53-58             
+----------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 3 passed, 3 total
+Tests:       23 passed, 23 total
+Snapshots:   0 total
+Time:        3.475 s
+Ran all test suites in 2 projects.

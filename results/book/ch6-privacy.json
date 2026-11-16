@@ -1,0 +1,81 @@
+{
+  "node": "v22.23.4",
+  "grid": [
+    {
+      "cellDeg": 0.001,
+      "nsKm": 0.1111950802335329,
+      "ewKm": 0.07635081954435635,
+      "nsHaversine": 0.11119508023327375,
+      "ewHaversine": 0.07635081954366624,
+      "maxErrorKm": 0.06575478811223491,
+      "maxErrorTheory": 0.06744218545027417
+    },
+    {
+      "cellDeg": 0.01,
+      "nsKm": 1.111950802335329,
+      "ewKm": 0.7635081954435635,
+      "nsHaversine": 1.111950802335108,
+      "ewHaversine": 0.7635081949312289,
+      "maxErrorKm": 0.6597423841557611,
+      "maxErrorTheory": 0.6744218545027416
+    },
+    {
+      "cellDeg": 0.1,
+      "nsKm": 11.11950802335329,
+      "ewKm": 7.635081954435636,
+      "nsHaversine": 11.119508023353447,
+      "ewHaversine": 7.63508144225301,
+      "maxErrorKm": 6.545985653728924,
+      "maxErrorTheory": 6.744218545027416
+    }
+  ],
+  "pseudonym": {
+    "space": 1000000,
+    "sample": 1000,
+    "recoveredFromSha": 1000,
+    "recoveredFromHmac": 0,
+    "enumerationSec": 1.014465138,
+    "shaPerSec": 1246704.3992557873,
+    "sec1e9": 802.11476
+  },
+  "retention": {
+    "rows": 600000,
+    "results": [
+      {
+        "batch": 100,
+        "medianMs": 0.431186,
+        "maxMs": 1.042104,
+        "rowsPerSec": 231918.4760173104,
+        "batches": 12
+      },
+      {
+        "batch": 1000,
+        "medianMs": 2.133449,
+        "maxMs": 3.566443,
+        "rowsPerSec": 468724.58633883443,
+        "batches": 12
+      },
+      {
+        "batch": 5000,
+        "medianMs": 9.276403,
+        "maxMs": 16.642311,
+        "rowsPerSec": 539002.0248150064,
+        "batches": 12
+      },
+      {
+        "batch": 20000,
+        "medianMs": 42.315448,
+        "maxMs": 53.902914,
+        "rowsPerSec": 472640.62996568053,
+        "batches": 12
+      },
+      {
+        "batch": 100000,
+        "medianMs": 188.098401,
+        "maxMs": 197.639595,
+        "rowsPerSec": 531636.629914786,
+        "batches": 7
+      }
+    ]
+  }
+}

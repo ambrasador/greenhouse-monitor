@@ -1,0 +1,32 @@
+[
+ {
+  "name": "socket.io-client",
+  "minKB": 40.9,
+  "gzipKB": 12.8
+ },
+ {
+  "name": "mqtt.js",
+  "minKB": 331.5,
+  "gzipKB": 102.3
+ },
+ {
+  "name": "ws (браузерний міст)",
+  "minKB": 0,
+  "gzipKB": 0
+ },
+ {
+  "name": "EventSource (вбудований)",
+  "minKB": 0,
+  "gzipKB": 0.1
+ },
+ {
+  "name": "власний контролер (series+backoff+livefeed+load-window)",
+  "minKB": 2.3,
+  "gzipKB": 1.3
+ },
+ {
+  "name": "react + react-dom + recharts (демо-сторінка)",
+  "minKB": 446.9,
+  "gzipKB": 139.3
+ }
+]

@@ -1,0 +1,23 @@
+Running 2 projects:
+- integration
+- unit
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------|---------|----------|---------|---------|-------------------
+All files       |    91.6 |    79.23 |      75 |    91.6 |                   
+ alerts.js      |   78.46 |    84.21 |   71.42 |   78.46 | 48-61             
+ app.js         |    93.1 |      100 |      80 |    93.1 | 19-20             
+ core.js        |   89.24 |    73.33 |   85.71 |   89.24 | 80-89             
+ health.js      |     100 |    91.66 |     100 |     100 | 13                
+ mqtt-source.js |      94 |    73.33 |   77.77 |      94 | 33-35             
+ ops-metrics.js |     100 |    92.59 |   88.88 |     100 | 16,75             
+ server.js      |   91.78 |       50 |   28.57 |   91.78 | 53-58             
+----------------|---------|----------|---------|---------|-------------------
+(node:9264) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Test Suites: 3 passed, 3 total
+Tests:       21 passed, 21 total
+Snapshots:   0 total
+Time:        3.364 s
+Ran all test suites in 2 projects.

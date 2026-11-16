@@ -1,0 +1,77 @@
+{
+ "t0": 1794400405.7910993,
+ "upSeconds": 5.4,
+ "duration": 240,
+ "outage": [
+  100,
+  125
+ ],
+ "burst": [
+  170,
+  185
+ ],
+ "sse": [
+  40,
+  160
+ ],
+ "badLogin": 140,
+ "events": [
+  {
+   "t": 82.11,
+   "what": "docker-stats-load"
+  },
+  {
+   "t": 100.36,
+   "what": "broker-stop",
+   "took": 0.36
+  },
+  {
+   "t": 125.38,
+   "what": "broker-start",
+   "took": 0.38
+  },
+  {
+   "t": 126.68,
+   "what": "broker-healthy"
+  },
+  {
+   "t": 243.23,
+   "what": "spray-check",
+   "exitCode": 1,
+   "out": "{\"windowSec\":300,\"names\":12,\"addresses\":1,\"attempts\":12}"
+  }
+ ],
+ "sim": {
+  "N": 200,
+  "T": 60,
+  "DURATION": 240,
+  "published": 2860,
+  "skippedOffline": 344,
+  "duplicates": 30,
+  "invalid": 300
+ },
+ "clients": {
+  "events": [
+   {
+    "t": 40,
+    "what": "sse-open",
+    "streams": 3
+   },
+   {
+    "t": 143.82,
+    "what": "bad-logins",
+    "names": 12
+   },
+   {
+    "t": 160.01,
+    "what": "sse-close"
+   }
+  ],
+  "sseEvents": 36,
+  "http": {
+   "200": 198,
+   "404": 21,
+   "login401": 12
+  }
+ }
+}
