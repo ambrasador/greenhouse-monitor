@@ -74,6 +74,16 @@ h2 { font-size: 1.1rem; margin: 1.25rem 0 .5rem; }
   main { padding: .5rem; }
   .grid { grid-template-columns: 1fr 1fr; }
 }
+/* До 22rem (352 px) 1fr не годиться: колонка росте під слово, яке не переноситься.
+   У ширшому шрифті (DejaVu Sans, типовий для Linux) «Попередження» й «Температура»
+   розтягували колонки, і сторінка виходила за 320 px. Тут колонки рівні, поля й
+   бейдж менші, а слово, що не вмістилося, переноситься замість прокручування */
+@media (max-width: 22rem) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .device-card { padding: .75rem .5rem; }
+  .badge { padding: .1rem .4rem; font-size: .75rem; }
+  .device-card__name, .device-card__metric, .badge { overflow-wrap: anywhere; }
+}
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
